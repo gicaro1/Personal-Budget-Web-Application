@@ -17,8 +17,6 @@
 		<form   action="insertDep"   action="showbalance" method="post">
 				<!-- <input type="hidden" name="showbalance"  /> -->
 			
-		
-
 
 			<table border="1">
 			
