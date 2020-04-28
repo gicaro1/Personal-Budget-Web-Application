@@ -5,11 +5,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- media queries  -->
+  
 <meta charset="UTF-8">
-<title>Deposit Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800i&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+<!-- Font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- bootraap -->
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+  <!-- customs CSS -->
+  <link rel="stylesheet" href="/CSS/styles.css">
+    <title>Deposit</title>
 </head>
 <body>
-	<h1>Deposit</h1>
+	<%-- <h1>Deposit</h1>
 
 	<div align="center" >
 
@@ -42,7 +58,7 @@
 		</form>
 		
 		
-<%-- 	<table>
+	<table>
 			<tr>
 				<c:forEach var="tempDep" items="${BALANCE}">
 					<td><c:out value="${tempDep.total}" /> balance</td>
@@ -53,9 +69,84 @@
 			</tr>
 
 
-		</table> --%>
+		</table>
 
 	</div>
+	 --%>
+	 <body> 
+        <div class="row  d-flex justify-content-center row_login_container ">
+            <div class="col-lg-5  A  ">
+                <div class="container   ">
+                    
+
+                
+                <div class="  card p-3 mt-3 login_main_container shadow rounded  card_container">
+                        <div class="col-12-sm   welcome_tittle text-muted  ">
+                                <h1 class=" text-center py-3 ">Deposit</h1>
+                            
+                        
+                        
+                        </div>
+                    <div class="text-center card-header bg-success rounded shadow">
+                    <h1 class="h1 text-light my-4  card_welcome_tittle ">Add Cash!</h1>
+                    </div>
+
+                    <div class="car-body pt-3">
+                            <form class="user"  action="insertDep"   action="showbalance" method="post">
+                                    <!-- <div class="form-group shadow">
+                                        <input type="text" class="form-control form-control  input_login form-control-user " name="total" aria-describedby="emailHelp" placeholder="Source:" value="<c:out value='${ProductExpense.sum}' />" />
+                                    </div> -->
+                                    <div class="form-group shadow">
+                                        <input type="text" class="form-control form-control-user" name="total" placeholder="amount">
+                                    </div>
+                                    <div class="form-group d-flex align-items-center rounded">
+                                        <label class="p-2 m-1 text-muted rounded shadow" >Date</label>
+                                         <input type="date" name="dateD" max="3000-12-31" 
+                                               min="1000-01-01" class="form-control shadow"  >
+                                       </div>
+                                      
+                                    <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow">save</button>
+                                
+                                </form>
+
+                    </div>
+             
+                    <hr>
+                    <div class="text-center">
+                    
+                        <div class="text-center">
+                            <!-- register link  -->
+                                <a class="small" href="register.html">Go to register!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="row m-3 bal_A ">
+            
+                
+
+                <div class="col-12 bg-light  shadow  text-left  border_line2  d-flex  justify-content-between py-2 mt-2 bal_B">
+                                          
+                        <div class="col-xs-9  w-80  h-40 py-3  text-center d-flex align-itmes-center bal_C">
+                                      
+                                        <h3><i class="fa fa-dollar pr-1"></i>1126.78 </h3>
+                        </div>
+
+                        <div class="col-sm-3 ">
+
+                                        <i class="fa fa-money fa-3x d-flex justify-content-center mt-2 pl-5 transport_logo "></i>
+                        </div>
+                              
+                </div>
+
+
+            </div>
+            </div>
+           
+      
+    
+</body>
 
 </body>
 </html>

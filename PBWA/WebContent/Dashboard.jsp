@@ -7,8 +7,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
 
 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- google Fonts-->
 <link
@@ -28,128 +31,103 @@
 <title>Dashboard</title>
 </head>
 <body>
+<body>
+
+   <div class="container-fluid">  
+          
+    <div class="row ">
 
 
-	<!-- NAVIGATION LINKS  -->
+        <div class="col-sm-2 bg-success side_bar  text-light"  id="myDIV">
+                        
 
-	<a href="deposit.jsp" class="btn btn-primary m-1">Deposit</a>
-	<br />
-	<a href="index.jsp" class="btn btn-warning m-1">index</a>
-	<br />
-	<button class="btn btn-success m-1">logout</button>
-	<br />
-	<i class="fa fa-instagram fa-lg m-1"> Instagram</i>
+            <div class="col-12-sm  col-3-sm py-1 d-inline-flex logo_col">
+                <img src="img/household-budget-logo.png"  class="logo mt-3 " alt="">
+                    <h6 class="text-light  d-flex   pbwa_tittle " >PBWA</h6>
+                    
+            </div>
+        
+            <hr class="hr_line bg-light">
 
-	<div class="chart">
-		<div id="chartContainer"></div>
+      
+                <h6 class="das_t" >Dashboard</h6>
+        
 
-</div>
+            <hr class="hr_line bg-light">
 
-
-	<form action="insert" method="post">
-
-
-
-		<table border="1">
-
-
-
-
-			<c:if test="${EX1 != null}">
-				<input type="hidden" name="id" value="<c:out value='${EX1.id}' />" />
-			</c:if>
-			<tr>
-				<th>Purpose:</th>
-
-				<td><input type="text" name="purpose" size="45"
-					value="<c:out value='${EX1.purpose}' />" /></td>
-			</tr>
-
-			<tr>
-				<th>Sum:</th>
-				<td><input type="text" name="sum" size="5"
-					value="<c:out value='${EX1.sum}' />" /></td>
-			</tr>
-			<tr>
-				<th>Date:</th>
-				<td><input type="text" name="date" size="45"
-					value="<c:out value='${EX1.dfec}' />" /></td>
-			</tr>
+            <div class="col-12 interface">
+                <div>
+                        <h6 class="features_tittle">Features</h6>
+                        <a  class="text-light" href="#"><i class="fa fa-folder p-2 ml-3 h6 "></i>Util</a><br>
+                        <hr class="hr_line bg-light">
 
 
+                </div>
+               
 
-			<tr>
-				<th>Category:</th>
+          
 
-				<td><input type="radio" name="dish" value="transport">Transport
-					<input type="radio" name="dish" value="home"> Home <input
-					type="radio" name="dish" value="Travel"> Travel</td>
-			<tr>
-				<td colspan="2" align="center"><input type="submit"
-					value="Save" /></td>
-		</table>
-	</form>
+                <h6 class="features_tittle">Interface</h6>
+                <a  class="text-light" href="deposit.jsp"><i class="fa fa-wrench p-2 ml-3 h6"></i>Dep</a><br>
+                <hr class="hr_line bg-light">
 
+                <h6 class="features_tittle">Features</h6>
+                <a  class="text-light" href="#"><i class="fa fa-folder p-2 ml-3 h6 "></i>Util</a><br>
+                <hr class="hr_line bg-light">
+                
+                <h6 class="features_tittle">Recomendations</h6>
+                <a  class="text-light " href="#"><i class="fa fa-table p-2 ml-3 h6  "></i>Tips</a>
+            </div>
 
-	<!-- --------------- TABLE------------------------- -->
-	<div align="right">
-		<h1>Personal Budget Web Application</h1>
+            <hr class="hr_line bg-light">
+        
+        </div>
 
-		<table border="1">
-
-			<tr>
-				<th>ID</th>
-				<th>Purpose</th>
-				<th>Category</th>
-				<th>Sum</th>
-				<th>Date</th>
-			</tr>
-			<c:forEach var="temp" items="${ELIST}">
-				<tr>
-					<td><c:out value="${temp.id}" /></td>
-					<td><c:out value="${temp.purpose}" /></td>
-					<td><c:out value="${temp.category}" /></td>
-					<td><c:out value="${temp.sum}" /></td>
-					<td><c:out value="${temp.dfec}" /></td>
-
-					<td><a href="edit?id=<c:out value='${temp.id}' />">Edit</a>
-						&nbsp;&nbsp;&nbsp;&nbsp; <a
-						href="delete?id=<c:out value='${temp.id}' />">Delete</a></td>
-				</tr>
-
-			</c:forEach>
-
-		</table>
+            <!-- ---------------- TOP BAR  SEARCH - PROFILE - PIC - ICON------------------ -->
 
 
 
-		<h1 align="left">All Deposits</h1>
-
-		<!-------------  TABLE DEPOSIT  -------- -->
-
-		<table border="1">
-
-			<tr>
-				<th>ID</th>
-				<th>Deposit</th>
-				<th>Date</th>
-			</tr>
-
-			 <!-- DEPOSITE TABLE  -->
-			<c:forEach var="tempB" items="${ELISTBAL}">
-				<tr>
-					<td><c:out value="${tempB.id}" /></td>
-					<td><c:out value="${tempB.total}" /></td>
-					<td><c:out value="${tempB.dfecdep}" /></td>
 
 
-				</tr>
-				<c:set var="total" value="${total + tempB.total}" />
 
-			</c:forEach>
+          
+         <div class=" col-md-10  bg-light" > 
 
-		</table>
+            <div class="row shadow  nav_top ">
+                <div class="container d-flex justify-content-between">
+                        <div class="container" onclick="myFunction(this)">
+                                <div class="bar1"></div>
+                                <div class="bar2"></div>
+                                <div class="bar3"></div>
+                    </div>
+                    
+                    
 
+                  
+                    
+                        <!-- <div class="col-xs-4 input-group  mt-4 w-50  search_bar">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label " for="customFile">Search...</label>
+                        </div> -->
+                      
+                                <!-- <form class="form-inline search_bar ">
+                                  <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                </form> -->
+                          
+                        <div class="col-xs-2   p-3 w-40  d-flex  ">
+                                <a href="#"><i class="fa fa-envelope  p-2"></i></a> 
+                                <a href="#"><i class="fa fa-bell  p-2"></i></a> 
+                                
+                        </div>
+                        <div class="col-xs-4  d-flex profile_img_wrapper  text-center">
+        
+                              <img class="profile_pic " src="img/profile2.jpeg" alt=""> 
+                              <p class="d-flex  profile_name ">Cardenas</p>
+                        </div> 
+                </div>
+            </div>
+            
 		<!------------- category Loop -------------->
 
 		<c:set var="TransporTotal" value="${0}" />
@@ -167,7 +145,7 @@
 		
 		
 
-			<c:choose>
+		<c:choose>
 
 				<c:when test="${temp.category eq 'transport'}">
 					<c:set var="TransporTotal" value="${TransporTotal + temp.sum}" />
@@ -193,16 +171,16 @@
 
 		<!-- BALANCE SUM SECTION   -->
 
-		<div align="center">
+<%-- 		<div align="center">
 		
 			<h1>Category Bar</h1>
 
 			BALANCE
 			<c:out value="${total}" />
-		</div>
+		</div> --%>
 
 		<!--  CATEGORY SECTION   -->
-		<div align="center">
+<%-- 		<div align="center">
 
 			TRANSPORT
 			<c:out value="${TransporTotal}" />
@@ -211,7 +189,139 @@
 			<br> HOME
 			<c:out value="${HomeTotal}" />
 
-		</div>
+		</div> --%>
+          
+
+
+            <div class="container-fluid"  >
+                <div class="pt-3">
+                  <h1 class="pt-3 Dashboard_tittle">  Dashboard</h1>
+                </div>
+                   
+                    <div class="row  pb-3 balance_section">
+                   
+                        
+                            
+                                  <div class="col bg-light m-2 shadow p-2  border_line  d-flex">
+                                          
+                                          <div class="col-xs-2  w-50  h-40 text-center">
+                                                          <h4>Balance</h4>
+                                                          <h3><i class="fa fa-dollar pr-1"></i><c:out value="${total}" /></h3>
+                                          </div>
+                
+                                          <div class="col-xs-2 w-50">
+                
+                                                          <i class="fa fa-money fa-3x d-flex justify-content-center mt-3 pl-5 transport_logo "></i>
+                                          </div>
+                                                
+                                  </div>
+                                  <!-- ------------TRANSPORT ------------ -->
+        
+                                    <div class="col bg-light m-2 shadow p-2 border_line1 d-flex">
+        
+                                        <div class="col-xs-2  w-50 text-center">
+                                            <h4>Transport</h4>
+                                            <h3><i class="fa fa-dollar pr-1"></i>	<c:out value="${TransporTotal}" /> </h3>
+                                        </div>
+                                        <div class="col-xs-1 w-50">
+                                            <i class="fa fa-bus fa-3x d-flex justify-content-center mt-3 pl-5  transport_logo"></i>
+                                        </div>
+                                  </div>
+                          
+        
+                                  <div class="col bg-light m-2 shadow p-2 border_line2 d-flex">
+                
+                                        <div class="col-xs-4 w-50 text-center">
+                                            <h4>Home</h4>
+                                            <h3><i class="fa fa-dollar pr-1"></i>	<c:out value="${HomeTotal}" /> </h3>
+                                            <i class="fas fa-pound-sign"></i>
+                                        </div>
+                
+                                        <div class="col-xs-1 w-50">
+                                            <i class="fa fa-home fa-3x d-flex justify-content-center mt-3 pl-5 transport_logo "></i>
+                                        </div>
+                                           
+                                  </div> 
+                                    <!-- --------------TRAVEL ------------ -->
+                                  <div class=" col  bg-light m-2 shadow p-2 border_line3 d-flex">
+                                        <div class="col-xs-2  w-50 text-center">
+                                                <h4>Travel</h4>
+                                                <h3  ><i class="fa fa-dollar h5_text_site_bar pr-1"></i>	<c:out value="${TravelTotal}" /> </h3>
+                                        </div>
+                                        <div class="col-xs-1 w-50">
+                
+                                                <i class="fa fa-plane fa-3x d-flex justify-content-center mt-3 pl-5  transport_logo"></i>
+                                        </div>
+                                        
+                                  </div> 
+       
+                    </div>
+            </div>
+            
+    
+
+         <div class="row  table_expensenses ">
+         
+            <div class="col-xl-8 col-lg-7   table_section table_expensenses">
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Records</h6>
+                    </div>
+          	
+					<table class="table table-bordered table-striped ">
+			
+				            <thead class="thead-light">
+				                <tr class="bg-light">
+				                        <th class="hide" scope="col">ID</th>
+				                        <th scope="col">Purpose</th>
+				                        <th scope="col">Category</th>
+				                        <th scope="col">Sum</th>
+				                        <th scope="col">Date</th>
+				                </tr>
+				            </thead>
+			            <tbody >
+			                <c:forEach var="temp" items="${ELIST}">
+			
+			                    <tr  >
+			                    
+			                        <td class="hide"><c:out value="${temp.id} " /></td>
+			                   
+			                        <td><c:out value="${temp.purpose}" /></td>
+			                  
+			                        <td><c:out value="${temp.category}" /></td>
+			                   
+			                        <td><c:out value="${temp.sum}" /></td>
+			
+			                        <td><c:out value="${temp.dfec}" /></td>
+			
+			                        <td><a href="edit?id=<c:out value='${temp.id}' />" class="btn-warning">Edit</a>
+			                            &nbsp;&nbsp;&nbsp;&nbsp; <a
+			                            href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td>
+			                    </tr>
+			                </c:forEach>
+			         </tbody>
+
+       			 </table>
+       		 </div>
+   		 </div>
+                  
+         <!-- FORM  -->
+  <div class="col-xl-4 col-lg-5  table_section">
+     <div class="card shadow mb-4">
+
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">form Expenses</h6>
+        </div>
+    <!-- FORM  -->
+         <div class="card-body">
+         
+            <form action="insert" method="post">
+
+     
+                     <c:if test="${EX1 != null}">
+                        <input type="hidden" name="id" value="<c:out value='${EX1.id}' />" />
+                    </c:if>  
 
 
 
@@ -219,6 +329,109 @@
 
 
 
+                    <div class="form-group ">
+                   
+                            <label for="pwd">Purpose</label>
+                            <input type="text" name="purpose" size="45"
+                            class="form-control" id="amount" value="<c:out value='${EX1.purpose}' />"/>
+                       
+                    </div>
+
+                    <div class="form-group>
+
+                       <label for="pwd">Sum</label>
+                       
+                        <input type="text" name="sum"  class="form-control" id="amount" size="5"
+                            value="<c:out value='${EX1.sum}' />"
+                    </div> 
+                        
+                    
+                   <div class="form-group>
+
+                        <label for="pwd">Date</label>
+                        <input type="text" name="date" class="form-control"  id="date" size="45"
+                            value="<c:out value='${EX1.dfec}' />" />
+                   </div>
+                    
+                    
+                    
+                    
+                    </div>
+                
+                    <div class=class="d-flex  justify-content-between"> 
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            	<input type="radio" class="form-check-input"  name="dish" value="transport">Transport
+                        	</label>
+                        </div>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio"  class="form-check-input" name="dish" value="home"> Home 
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio"  class="form-check-input" name="dish" value="Travel"> Travel
+                            </label>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    <button type="submit" class="btn btn-success btn-block mt-4 "  value="Save" >Submit</button> 
+
+                        <!-- <colspan colspan="2" align="center"><input type="submit"
+                            value="Save" /></colspan> -->
+                <!-- </table> -->
+             </form>
+        </div>
+    </div>
+</div> 
+
+</div>
+
+
+ <div class="row ">
+           
+               
+                <div class="col-xl-8 col-lg-7">
+                    <div class="card shadow mb-4">
+                     
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Map</h6>
+                        </div>
+
+
+                        <iframe class="w-100  "  src="https://www.google.com/maps/d/embed?mid=1XrwiOsj8gnAD6Nry_XEg8j3LCYxULrAZ" width="640" height="480"></iframe>
+
+                    </div>
+                </div>
+                
+                <div class="col-xl-4 col-lg-5 table_section">
+                    <div class="card shadow mb-4">
+        
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Social Media</h6>
+
+                        
+                    </div>
+                    <img src="img/social.svg" class="social_img mt-4" alt="">
+                    <!-- Card Body -->
+                    <div class="card-body text-center d-flex justify-content-around d-block">
+                    
+                        <a href="https://en-gb.facebook.com/"><i class="fa fa-facebook social_icon fa-3x d-block"></i>Facebook</a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en">   <i class="fa fa-instagram social_icon fa-3x d-block social_icon"></i>Instagram</a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en">   <i class="fa fa-twitter  social_icon fa-3x d-block social_icon"></i>Twitter</a>
+
+                    </div>
+                    </div>
+                </div>
+                            
+            </div>
 
 
 
@@ -226,13 +439,113 @@
 
 
 
+            <div class="row  ">
+
+                    <!-- Area Chart -->
+                <div class="col-xl-12  text-center  ">
+                            
+                    <div class="bg-primary  p-4 m-2 shadow rounded "> 
+                                <a class="text-light" href="https://www.ucas.com/">UCAS</a>
+                    </div>
+                    <div class=" bg-success p-4 m-2 shadow rounded"> 
+                        <a class="text-light" href="https://www.gov.uk/student-finance">STUDENT FINANCE</a>
+                    </div>
+
+                    <div class="bg-danger p-4 m-2 shadow  rounded">
+                        <a class="text-light" href="https://www.ukcisa.org.uk/">UKCISA</a>
+                    </div>
+
+                    <div class=" bg-warning p-4 m-2 shadow rounded">
+                                        <a class="text-light" href="http://www.bbk.ac.uk/student-services/financial-support">BIRKBECK FINANTIAL SUPPORT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-muted   mt-5 shadow">
+
+                <div class="footer-copyright text-center  text-muted py-3">© 2020 Copyright:
+                    <a class="text-muted" href="https://mdbootstrap.com/"> PBWA</a>
+                 </div>
+            </div>
+        </div>
+         </div>
+        </div>
+              
+     </div>
+     <script>
+   
+            function myFunction(x) {
+                x.classList.toggle("change");
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+            }
+    </script>
+</body>
 
 
+	<!-- NAVIGATION LINKS  -->
+<!-- 
+	<a href="deposit.jsp" class="btn btn-primary m-1">Deposit</a>
+	<br />
+	<a href="index.jsp" class="btn btn-warning m-1">index</a>
+	<br />
+	<button class="btn btn-success m-1">logout</button>
+	<br />
+	<i class="fa fa-instagram fa-lg m-1"> Instagram</i>
 
-
+	<div class="chart">
+		<div id="chartContainer"></div>
 
 	</div>
-	<%
+
+                <!-- ***************************** -->
+
+
+		<h1 align="left">All Deposits</h1>
+
+		<!-------------  TABLE DEPOSIT  -------- -->
+			<!-------------  TABLE DEPOSIT  -------- -->
+
+        <div class="row ">
+            <table class="table table-bordered table-striped">
+              
+                <thead class="thead-light">
+                    <tr class="bg-light">
+                            <th scope="col">ID</th>
+                            <th scope="col">Deposit</th>
+                            <th scope="col">Date</th>
+                    </tr>
+                </thead>
+
+                <!-- DEPOSITE TABLE  -->
+                <c:forEach var="tempB" items="${ELISTBAL}">
+                    <tr>
+                        <td><c:out value="${tempB.id}" /></td>
+                        <td><c:out value="${tempB.total}" /></td>
+                        <td><c:out value="${tempB.dfecdep}" /></td>
+
+
+                    </tr>
+                    
+                    <c:set var="total" value="${total + tempB.total}" />
+
+                </c:forEach>
+
+            </table>
+
+        </div>
+        
+        <!-- **************************** -->
+        	<div class="chart">
+		<div id="chartContainer"></div>
+
+	</div>
+        
+
+ 	<%
 		Double  transportChartPie  =  (Double)pageContext.getAttribute("TransporTotal"); 
 		Double  homeChartPie  =  (Double)pageContext.getAttribute("HomeTotal"); 
 		Double  TravelChartPie  =  (Double)pageContext.getAttribute("TravelTotal"); 
@@ -257,7 +570,7 @@
 		
 	
 		String dataPoints = gsonObj.toJson(list);
-	%>
+	%> 
 	
 	<script type="text/javascript">
 		window.onload = function() {
@@ -282,7 +595,7 @@
 	</script>
 
 	
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> --%> 
 
 </body>
 </html>
