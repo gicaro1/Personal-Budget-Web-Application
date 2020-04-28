@@ -25,6 +25,8 @@
         <servlet-name>controllerPBWA</servlet-name>
         <servlet-class>Personal_Budeget_Web_Application.controllerPBWA</servlet-class>
     </servlet>
+    
+
       <servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.css</url-pattern>

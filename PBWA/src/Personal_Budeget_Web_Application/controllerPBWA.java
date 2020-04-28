@@ -1,6 +1,7 @@
 package Personal_Budeget_Web_Application;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/controllerPBWA")
 public class controllerPBWA extends HttpServlet {
@@ -28,8 +30,14 @@ public class controllerPBWA extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		doGet(request, response);
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.removeAttribute("user");
+             
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            dispatcher.forward(request, response);
+        }
+	
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,6 +46,13 @@ public class controllerPBWA extends HttpServlet {
 
 		try {
 			switch (action) {
+			
+			case "/login":
+				login(request, response);
+				break;
+//			case "/logout":
+//				logout(request, response);
+//				break;
 
 			case "/new":
 				showNewForm(request, response);
@@ -78,7 +93,80 @@ public class controllerPBWA extends HttpServlet {
 			throw new ServletException(ex);
 		}
 	}
+//private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//	
+//	HttpSession session = request.getSession();
+//	session.invalidate();
+//	
+//	response.sendRedirect("index.jps");
+//	
+//		
+//	}
 
+//	 <-----------LOGIN ---------------->
+	private void login(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException, SQLException {
+
+		PrintWriter out = response.getWriter();
+		String username = request.getParameter("username");
+		String userpass = request.getParameter("userpass");
+
+		response.setContentType("text/html");
+
+//		<-------------------SESSION -------------------------->
+	
+//
+
+
+		if (Exp1.validate(username, userpass)) {
+			
+		request.getSession(true).setAttribute("USER_SESSION", username);
+	
+			
+
+				List<ProductExpense> list1 = Exp1.listAll();
+				request.setAttribute("ELIST", list1);
+				
+				List<BalanceT> list2 = Exp1.listBalance();
+				request.setAttribute("ELISTBAL", list2);
+
+				RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
+				rd.forward(request, response);
+//				if(request.getSession(true) == null) {
+//					String username1 = (String) request.getSession().getAttribute("username");
+//					out.print("Welcome " + username1);
+//					out.print("<br/><a href=\"Logout\">Logout</a>");
+//				}
+			
+
+			} else {
+				out.print("Sorry username or password error");
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				rd.include(request, response);
+			}
+	}
+	
+//	<------------------------- LOGOUT---------------------->
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	<------------------- ********************------------->
 //	<--------------------- lIST METHODS -------------------->
 
 	private void listexpenses(HttpServletRequest request, HttpServletResponse response)
@@ -127,22 +215,7 @@ public class controllerPBWA extends HttpServlet {
 //
 //	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
@@ -159,27 +232,7 @@ public class controllerPBWA extends HttpServlet {
 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
