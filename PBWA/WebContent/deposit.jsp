@@ -92,7 +92,9 @@
                     </div>
 
                     <div class="car-body pt-3">
-                            <form class="user"  action="insertDep"   action="showbalance" method="post">
+                    
+                    	<!--  action="showbalance" -->
+                            <form class="user"  action="insertDep"   method="get">
                                     <!-- <div class="form-group shadow">
                                         <input type="text" class="form-control form-control  input_login form-control-user " name="total" aria-describedby="emailHelp" placeholder="Source:" value="<c:out value='${ProductExpense.sum}' />" />
                                     </div> -->

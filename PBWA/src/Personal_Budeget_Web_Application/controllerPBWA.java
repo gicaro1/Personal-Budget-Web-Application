@@ -1,7 +1,7 @@
 package Personal_Budeget_Web_Application;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -84,7 +84,8 @@ public class controllerPBWA extends HttpServlet {
 			default:
 				
 			
-				listexpenses(request, response) ;
+				listexpenses(request, response);
+//				listBalance(request, response) ;
 				
 //				DisplayBalance(request, response);
 
@@ -93,21 +94,13 @@ public class controllerPBWA extends HttpServlet {
 			throw new ServletException(ex);
 		}
 	}
-//private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//	
-//	HttpSession session = request.getSession();
-//	session.invalidate();
-//	
-//	response.sendRedirect("index.jps");
-//	
-//		
-//	}
+
 
 //	 <-----------LOGIN ---------------->
 	private void login(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 
-		PrintWriter out = response.getWriter();
+//		PrintWriter out = response.getWriter();
 		String username = request.getParameter("username");
 		String userpass = request.getParameter("userpass");
 
@@ -140,7 +133,8 @@ public class controllerPBWA extends HttpServlet {
 			
 
 			} else {
-				out.print("Sorry username or password error");
+		
+				request.setAttribute("MESSAGE", "Sorry username or password error" );
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.include(request, response);
 			}
@@ -177,20 +171,39 @@ public class controllerPBWA extends HttpServlet {
 		request.setAttribute("ELIST", list1);
 		
 		
-		
+//		
 		List<BalanceT> list2 = Exp1.listBalance();
+		request.setAttribute("ELISTBAL", list2);
+		
 //		<---- SUM METHOD ----->
 		
 //	
 //		Double counterTotal = Exp1.SumAllDeposit(list2);
 		
-		request.setAttribute("ELISTBAL", list2);
-		
+	
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
 		dispatcher.forward(request, response);
 
 	}
+	
+//
+//	private void listBalance(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException, SQLException {
+//		
+//
+//	
+//		List<BalanceT> list2 = Exp1.listBalance();
+//		
+//		request.setAttribute("ELISTBAL", list2);
+//		
+//		
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
+//		dispatcher.forward(request, response);
+//
+//	}
+	
+	
 
 
 //	
@@ -260,7 +273,7 @@ public class controllerPBWA extends HttpServlet {
 
 	// <------------------INSERT METHOD Deposit Page-------------------> //
 	private void insertDeposit(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, IOException {
+			throws SQLException, IOException, ServletException {
 
 		Double to = Double.parseDouble(request.getParameter("total"));
 		String dfecD = request.getParameter("dateD");
@@ -270,6 +283,9 @@ public class controllerPBWA extends HttpServlet {
 		Exp1.insertDepositExp(newExp);
 
 		response.sendRedirect("list");
+
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
+//		dispatcher.forward(request, response);
 
 	}
 

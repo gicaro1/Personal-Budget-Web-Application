@@ -102,7 +102,10 @@
                     </div>
                     
                     
-
+							<form action="logout" method="post">
+						<input type="submit" value="logout"
+							class="btn btn-outline-danger btn-lg  btn-block shadow mt-1" />
+					</form>
                   
                     
                         <!-- <div class="col-xs-4 input-group  mt-4 w-50  search_bar">
@@ -123,7 +126,7 @@
                         <div class="col-xs-4  d-flex profile_img_wrapper  text-center">
         
                               <img class="profile_pic " src="img/profile2.jpeg" alt=""> 
-                              <p class="d-flex  profile_name ">Cardenas</p>
+                              <p class="d-flex  profile_name "><c:out value="${USER_SESSION}"/></p>
                         </div> 
                 </div>
             </div>
@@ -316,7 +319,7 @@
     <!-- FORM  -->
          <div class="card-body">
          
-            <form action="insert" method="post">
+            <form action="insert" method="get">
 
      
                      <c:if test="${EX1 != null}">
@@ -460,17 +463,20 @@
                     </div>
                 </div>
             </div>
+            
             <div class="text-muted   mt-5 shadow">
 
                 <div class="footer-copyright text-center  text-muted py-3">© 2020 Copyright:
                     <a class="text-muted" href="https://mdbootstrap.com/"> PBWA</a>
                  </div>
             </div>
+            
         </div>
-         </div>
-        </div>
+      </div>
+   </div>
               
-     </div>
+
+    
      <script>
    
             function myFunction(x) {
@@ -539,13 +545,12 @@
         </div>
         
         <!-- **************************** -->
-        	<div class="chart">
+   <div class="chart">
 		<div id="chartContainer"></div>
 
 	</div>
-        
-
- 	<%
+<%--         
+<%
 		Double  transportChartPie  =  (Double)pageContext.getAttribute("TransporTotal"); 
 		Double  homeChartPie  =  (Double)pageContext.getAttribute("HomeTotal"); 
 		Double  TravelChartPie  =  (Double)pageContext.getAttribute("TravelTotal"); 
@@ -594,8 +599,8 @@
 		}
 	</script>
 
-	
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> --%> 
-
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> --%>
 </body>
 </html>
+
+
