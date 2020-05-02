@@ -149,6 +149,10 @@ overflow: hidden;
 	
 
 }
+
+.logout{
+	left: 0;
+}
 /* ----------- IPAD MEDIA QUERIES------------ */
 
 
@@ -216,13 +220,46 @@ canvas{
 
 /* ******************* */
 
+  /* ----- LOGOUT BUTTON ------- */
+   
+   .containerFluidLogout{
+   		  display: flex; 
+   	
+   	
+   }   
+    .logout_btn {
 
+   	 width: 100%;
+    font-family: 'Nunito', sans-serif;
+ 
+   	 font-size: 20px;
+   	 margin: 15px;
+
+   } 
 /* -------  MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
    .welcome_tittle h1{
        margin-top: 30px;
        font-size: 20px;
    } 
+   
+   /* ----- LOGOUT BUTTON ------- */
+   
+   .containerFluidLogout{
+   		  display: block; 
+   		  flex-direction: column;
+   }
+   
+    .logout_btn {
+
+   	 width: 80vw;
+   	 margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+   	 padding: 10px;
+   	 font-size: 20px;
+
+   }
+   /* **************** */
    .profile_name{
 
     margin-top: 18px;

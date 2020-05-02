@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Index</title>
@@ -30,6 +32,9 @@
 
 </head>
 <body>
+	
+
+	
 	<div class="col-12-sm m-2 py-4 welcome_tittle text-muted  w-100">
 		<h1 class=" text-center ">Personal budget Web Application</h1>
 		<!-- <img src="/img/geometry.jpg" class="bg" alt=""> -->
@@ -47,12 +52,12 @@
 		<div class="col-lg-5  ">
 
 			<div class="container  ">
-
+			
 
 				<div class="  card p-3 mt-3 login_main_container ">
 					<div class="text-center card-header bg-success rounded shadow">
 						<h1 class="h1 text-light my-4  card_welcome_tittle ">Welcome
-							Back!</h1>
+							Back!</h1> <%-- <c:out value="${USER_SESSION}"/> --%>
 					</div>
 
 					<div class="car-body pt-3">
@@ -64,10 +69,6 @@
 								<form class="needs-validation" action="login" method="get"
 									class="user">
 									
-									
-									
-									
-									
 
 									<div class="form-group shadow">
 
@@ -76,15 +77,7 @@
 											
 											aria-describedby="emailHelp" placeholder="Name:">
 									</div>
-									
-							
-
-
-
-
-
-
-
+								
 
 									<div class="form-group shadow">
 
@@ -131,7 +124,7 @@
 
 						<div class="text-center">
 							<!-- register link  -->
-							<a class="small" href="register.html">Go to register!</a>
+							<a class="small" href="register.jsp">Go to register!</a>
 						</div>
 					</div>
 				</div>

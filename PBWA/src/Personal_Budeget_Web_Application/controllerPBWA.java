@@ -31,11 +31,15 @@ public class controllerPBWA extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
         HttpSession session = request.getSession(false);
+    
         if (session != null) {
-            session.removeAttribute("user");
+            session.removeAttribute("username");
+        
+            session.invalidate();
              
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+//            dispatcher.forward(request, response);
+            response.sendRedirect("index.jsp");
         }
 	
 	}
@@ -106,12 +110,16 @@ public class controllerPBWA extends HttpServlet {
 
 		response.setContentType("text/html");
 
-//		<-------------------SESSION -------------------------->
-	
-//
 
+
+
+
+	
 
 		if (Exp1.validate(username, userpass)) {
+			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+			
+//			<-------------------SESSION -------------------------->
 			
 		request.getSession(true).setAttribute("USER_SESSION", username);
 	
@@ -122,7 +130,10 @@ public class controllerPBWA extends HttpServlet {
 				
 				List<BalanceT> list2 = Exp1.listBalance();
 				request.setAttribute("ELISTBAL", list2);
-
+				
+//				response.sendRedirect("Dashboard.jsp");
+				
+				
 				RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
 				rd.forward(request, response);
 //				if(request.getSession(true) == null) {
