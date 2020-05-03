@@ -20,6 +20,7 @@
 
   <!-- customs CSS -->
   <link rel="stylesheet" href="/CSS/styles.css">
+  
     <title>Register</title>
 </head>
 <body>
