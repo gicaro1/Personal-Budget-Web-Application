@@ -6,33 +6,33 @@
 <%@ page import="com.google.gson.JsonObject"%>
 <!DOCTYPE html>
 <html>
-	<head>
-	
-		<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
-		
-		
-		
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		
-		<!-- google Fonts-->
-		<link
-			href="https://fonts.googleapis.com/css?family=Nunito:400,700,800i&display=swap"
-			rel="stylesheet">
-		<!-- Font awesome -->
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!-- bootraap -->
-		<link
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-			rel="stylesheet">
-		
-		<!-- StylesSheet  -->
-		<link rel="stylesheet" href="http://localhost:8080/PBWA/css/styles.css" />
-		
-		<title>Dashboard</title>
-	</head>
+<head>
+
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- google Fonts-->
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:400,700,800i&display=swap"
+	rel="stylesheet">
+<!-- Font awesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- bootraap -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- StylesSheet  -->
+<link rel="stylesheet" href="http://localhost:8080/PBWA/css/styles.css" />
+
+<title>Dashboard</title>
+</head>
 
 <body>
 
@@ -210,23 +210,24 @@
 			<c:out value="${HomeTotal}" />
 
 		</div> --%>
-					<!-----------------LOGOUT-------------  -->
-						
-				<div class=" justify-content-between container-fluid containerFluidLogout">
-						<div>
-							<h1 class="text-right pt-3 Dashboard_tittle">Dashboard</h1>
-							
-						</div>
-				
-						<div class="text-center ">
-	
-							<form action="logout" method="post">
-								<!-- <i class="fa fa-home"></i> -->
-								<input type="submit" value="logout"
-									class="btn btn-outline-danger btn-sm  logout_btn shadow " />
-									
-							</form>
-					  </div>
+				<!-----------------LOGOUT-------------  -->
+
+				<div
+					class=" justify-content-between container-fluid containerFluidLogout">
+					<div>
+						<h1 class="text-right pt-3 Dashboard_tittle">Dashboard</h1>
+
+					</div>
+
+					<div class="text-center ">
+
+						<form action="logout" method="post">
+							<!-- <i class="fa fa-home"></i> -->
+							<input type="submit" value="logout"
+								class="btn btn-outline-danger btn-sm  logout_btn shadow " />
+
+						</form>
+					</div>
 				</div>
 
 				<div class=" container-fluid">
@@ -309,28 +310,39 @@
 				</div>
 
 
+				<!-- ----------------- TABLE EXPENSES------------------ -->
 
-				<div class="row  table_expensenses ">
+				<div class="row  ">
 
-					<div class="col-xl-8 col-lg-7   table_section table_expensenses">
-						<div class="card shadow mb-4">
+					<div class="col-xl-8 col-lg-7   table_section ">
+						<div class="card shadow mb-4 secondary_table">
 							<!-- Card Header - Dropdown -->
 							<div
-								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-primary">Records</h6>
+								class="card-header py-3 d-flex flex-row align-items-center justify-content-between table_headers">
+								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
 							</div>
 
-							<table class="table table-bordered table-striped ">
+							<table class="table table-bordered table-striped  ">
 
-								<thead class="thead-light">
-									<tr class="bg-light">
+
+								<thead class="thead-light  ">
+
+									<tr class="bg-light table_headers ">
 										<th class="hide" scope="col">ID</th>
 										<th scope="col">Purpose</th>
 										<th scope="col">Category</th>
 										<th scope="col">Sum</th>
 										<th scope="col">Date</th>
+										<th scope="col">Actions</th>
 									</tr>
+
 								</thead>
+
+
+
+
+
+
 								<tbody>
 									<c:forEach var="temp" items="${ELIST}">
 
@@ -354,6 +366,7 @@
 									</c:forEach>
 								</tbody>
 
+
 							</table>
 						</div>
 					</div>
@@ -369,7 +382,14 @@
 							<!-- FORM  -->
 							<div class="card-body">
 
-								<form action="insert" method="get">
+
+
+
+
+
+
+
+								<form class="needs-validation" action="insert" method="get">
 
 
 									<c:if test="${EX1 != null}">
@@ -385,162 +405,162 @@
 
 									<div class="form-group ">
 
-										<label for="pwd">Purpose</label> <input type="text"
-											name="purpose" size="45" class="form-control" id="amount"
+										<label for="pwd">Purpose</label> 
+										<input type="text" id="validationServer01"
+											name="purpose" size="45" class="form-control is-valid " id="amount"
 											value="<c:out value='${EX1.purpose}' />" />
 
 									</div>
 
-									<div
-										class="form-group>
+									<div class="form-group">
 
-                       <label for="pwd">Sum</label>
-                       
-                        <input type="text" name="sum"  class="form-control" id="amount" size="5"
-                            value="<c:out value='${EX1.sum}' />"
-                    </div> 
-                        
-                    
-                   <div class="form-group>
-
-                        <label for="pwd">Date</label>
-                        <input type="text" name="date" class="form-control"  id="date" size="45"
-                            value="<c:out value='${EX1.dfec}' />" />
-                   </div>
-                    
-                    
-                    
-                    
-                    </div>
-                
-                    <div class=class="d-flex  justify-content-between">
-
-										<div class="form-check">
-											<label class="form-check-label"> <input type="radio"
-												class="form-check-input" name="dish" value="transport">Transport
-											</label>
-										</div>
-
-										<div class="form-check">
-											<label class="form-check-label"> <input type="radio"
-												class="form-check-input" name="dish" value="home">
-												Home
-											</label>
-										</div>
-
-										<div class="form-check">
-											<label class="form-check-label"> <input type="radio"
-												class="form-check-input" name="dish" value="Travel">
-												Travel
-											</label>
-										</div>
-
+										<label for="pwd">Sum</label> 
+										<input type="text" name="sum" id="validationServer01"
+											class="form-control is-valid"   required id="amount" size="5"
+											value="<c:out value='${EX1.sum}' />" />
 									</div>
 
 
+									<div class="form-group">
 
-									<button type="submit" class="btn btn-success btn-block mt-4 "
-										value="Save">Submit</button>
+										<label for="pwd">Date</label>
+										 <input type="text" name="date" id="validationServer01"
+											class="form-control is-valid"   required id="date" size="45"
+											value="<c:out value='${EX1.dfec}' />" />
+									</div>
+							</div>
 
-									<!-- <colspan colspan="2" align="center"><input type="submit"
+							<div class="d-flex justify-space-between">
+
+								<div class="form-check">
+									<label class="form-check-label"> 
+									<input type="radio" id="validationServer01"
+										class="form-check-input is-valid"   required name="dish" value="transport">Transport
+									</label>
+								</div>
+
+								<div class="form-check">
+									<label class="form-check-label">
+									 <input type="radio" id="validationServer01"
+										class="form-check-input is-valid" required name="dish" value="home">
+										Home
+									</label>
+								</div>
+
+								<div class="form-check">
+									<label class="form-check-label"> 
+									<input type="radio" id="validationServer01"
+										class="form-check-input is-valid"  requiredname="dish" value="Travel">
+										Travel
+									</label>
+								</div>
+
+							</div>
+
+
+
+							<button type="submit" class="btn btn-success btn-block mt-4 "
+								value="Save">Submit</button>
+
+							<!-- <colspan colspan="2" align="center"><input type="submit"
                             value="Save" /></colspan> -->
-									<!-- </table> -->
-								</form>
-							</div>
+							<!-- </table> -->
+							</form>
 						</div>
-					</div>
-
-				</div>
-
-
-				<div class="row ">
-
-
-					<div class="col-xl-8 col-lg-7">
-						<div class="card shadow mb-4">
-
-							<div
-								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-primary">Map</h6>
-							</div>
-
-
-							<iframe class="w-100  "
-								src="https://www.google.com/maps/d/embed?mid=1XrwiOsj8gnAD6Nry_XEg8j3LCYxULrAZ"
-								width="640" height="480"></iframe>
-
-						</div>
-					</div>
-
-					<div class="col-xl-4 col-lg-5 table_section">
-						<div class="card shadow mb-4">
-
-							<div
-								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-primary">Social Media</h6>
-
-
-							</div>
-							<img src="img/social.svg" class="social_img mt-4" alt="">
-							<!-- Card Body -->
-							<div
-								class="card-body text-center d-flex justify-content-around d-block">
-
-								<a href="https://en-gb.facebook.com/"><i
-									class="fa fa-facebook social_icon fa-3x d-block"></i>Facebook</a> <a
-									href="https://www.instagram.com/accounts/login/?hl=en"> <i
-									class="fa fa-instagram social_icon fa-3x d-block social_icon"></i>Instagram
-								</a> <a href="https://www.instagram.com/accounts/login/?hl=en">
-									<i class="fa fa-twitter  social_icon fa-3x d-block social_icon"></i>Twitter
-								</a>
-
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-
-
-
-
-
-
-				<div class="row  ">
-
-					<!-- Area Chart -->
-					<div class="col-xl-12  text-center  ">
-
-						<div class="bg-primary  p-4 m-2 shadow rounded ">
-							<a class="text-light" href="https://www.ucas.com/">UCAS</a>
-						</div>
-						<div class=" bg-success p-4 m-2 shadow rounded">
-							<a class="text-light" href="https://www.gov.uk/student-finance">STUDENT
-								FINANCE</a>
-						</div>
-
-						<div class="bg-danger p-4 m-2 shadow  rounded">
-							<a class="text-light" href="https://www.ukcisa.org.uk/">UKCISA</a>
-						</div>
-
-						<div class=" bg-warning p-4 m-2 shadow rounded">
-							<a class="text-light"
-								href="http://www.bbk.ac.uk/student-services/financial-support">BIRKBECK
-								FINANTIAL SUPPORT</a>
-						</div>
-					</div>
-				</div>
-
-				<div class="text-muted   mt-5 shadow">
-
-					<div class="footer-copyright text-center  text-muted py-3">
-						© 2020 Copyright: <a class="text-muted"
-							href="https://mdbootstrap.com/"> PBWA</a>
 					</div>
 				</div>
 
 			</div>
+
+
+			<div class="row ">
+
+
+				<div class="col-xl-8 col-lg-7">
+					<div class="card shadow mb-4">
+
+						<div
+							class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+							<h6 class="m-0 font-weight-bold text-primary">Map</h6>
+						</div>
+
+
+						<iframe class="w-100  "
+							src="https://www.google.com/maps/d/embed?mid=1XrwiOsj8gnAD6Nry_XEg8j3LCYxULrAZ"
+							width="640" height="480"></iframe>
+
+					</div>
+				</div>
+
+				<div class="col-xl-4 col-lg-5 table_section">
+					<div class="card shadow mb-4">
+
+						<div
+							class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+							<h6 class="m-0 font-weight-bold text-primary">Social Media</h6>
+
+
+						</div>
+						<img src="img/social.svg" class="social_img mt-4" alt="">
+						<!-- Card Body -->
+						<div
+							class="card-body text-center d-flex justify-content-around d-block">
+
+							<a href="https://en-gb.facebook.com/"><i
+								class="fa fa-facebook social_icon fa-3x d-block"></i>Facebook</a> <a
+								href="https://www.instagram.com/accounts/login/?hl=en"> <i
+								class="fa fa-instagram social_icon fa-3x d-block social_icon"></i>Instagram
+							</a> <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+								class="fa fa-twitter  social_icon fa-3x d-block social_icon"></i>Twitter
+							</a>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+			<div class="row  ">
+
+				<!-- Area Chart -->
+				<div class="col-xl-12  text-center  ">
+
+					<div class="bg-primary  p-4 m-2 shadow rounded ">
+						<a class="text-light" href="https://www.ucas.com/">UCAS</a>
+					</div>
+					<div class=" bg-success p-4 m-2 shadow rounded">
+						<a class="text-light" href="https://www.gov.uk/student-finance">STUDENT
+							FINANCE</a>
+					</div>
+
+					<div class="bg-danger p-4 m-2 shadow  rounded">
+						<a class="text-light" href="https://www.ukcisa.org.uk/">UKCISA</a>
+					</div>
+
+					<div class=" bg-warning p-4 m-2 shadow rounded">
+						<a class="text-light"
+							href="http://www.bbk.ac.uk/student-services/financial-support">BIRKBECK
+							FINANTIAL SUPPORT</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-muted   mt-5 shadow">
+
+				<div class="footer-copyright text-center  text-muted py-3">
+					© 2020 Copyright: <a class="text-muted"
+						href="https://mdbootstrap.com/"> PBWA</a>
+				</div>
+			</div>
+
 		</div>
+	</div>
 	</div>
 
 

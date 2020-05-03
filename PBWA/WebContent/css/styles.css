@@ -143,10 +143,25 @@ visibility: hidden;
 display: none;
 
 }
-.table_expensenses{
 
-overflow: hidden; 
+
+.table_headers{
+	 position: sticky;
+   position: -webkit-sticky;
+   /*  position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky; */
 	
+  top: 0;
+
+	
+
+}
+.secondary_table{
+		 position: sticky;
+	
+	  height: 420px;
+	  overflow: scroll;
 
 }
 

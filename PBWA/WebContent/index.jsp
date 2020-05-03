@@ -69,6 +69,8 @@
 								<form class="needs-validation" action="login" method="get"
 									class="user">
 									
+									
+									
 
 									<div class="form-group shadow">
 
@@ -77,6 +79,14 @@
 											
 											aria-describedby="emailHelp" placeholder="Name:">
 									</div>
+									
+									
+									
+									
+									
+									
+									
+									
 								
 
 									<div class="form-group shadow">
