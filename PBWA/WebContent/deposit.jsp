@@ -94,17 +94,22 @@
                     <div class="car-body pt-3">
                     
                     	<!--  action="showbalance" -->
-                            <form class="user"  action="insertDep"   method="get">
+                            <form class=" needs-validation user"  action="insertDep"   method="get">
                                     <!-- <div class="form-group shadow">
                                         <input type="text" class="form-control form-control  input_login form-control-user " name="total" aria-describedby="emailHelp" placeholder="Source:" value="<c:out value='${ProductExpense.sum}' />" />
                                     </div> -->
+                                    
+                                    
                                     <div class="form-group shadow">
-                                        <input type="text" class="form-control form-control-user" name="total" placeholder="amount">
+                                        <input type="text" class="form-control form-control-user is-valid" name="total" placeholder="amount" class="form-control is-valid"   required >
                                     </div>
+                                    
+                                    
+                                    
                                     <div class="form-group d-flex align-items-center rounded">
-                                        <label class="p-2 m-1 text-muted rounded shadow" >Date</label>
+                                        <label class="p-2 m-1 text-muted rounded shadow is-valid" >Date</label>
                                          <input type="date" name="dateD" max="3000-12-31" 
-                                               min="1000-01-01" class="form-control shadow"  >
+                                               min="1000-01-01" class="form-control shadow"  id="validationServer01"   required  >
                                        </div>
                                       
                                     <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow">save</button>

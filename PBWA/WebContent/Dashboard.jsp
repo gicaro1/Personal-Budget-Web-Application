@@ -318,16 +318,16 @@
 						<div class="card shadow mb-4 secondary_table">
 							<!-- Card Header - Dropdown -->
 							<div
-								class="card-header py-3 d-flex flex-row align-items-center justify-content-between table_headers">
+								class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
 								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
 							</div>
 
 							<table class="table table-bordered table-striped  ">
 
 
-								<thead class="thead-light  ">
+								<thead class="thead-light ">
 
-									<tr class="bg-light table_headers ">
+									<tr class="bg-light  sticky-top ">
 										<th class="hide" scope="col">ID</th>
 										<th scope="col">Purpose</th>
 										<th scope="col">Category</th>
@@ -337,11 +337,6 @@
 									</tr>
 
 								</thead>
-
-
-
-
-
 
 								<tbody>
 									<c:forEach var="temp" items="${ELIST}">
@@ -383,12 +378,6 @@
 							<div class="card-body">
 
 
-
-
-
-
-
-
 								<form class="needs-validation" action="insert" method="get">
 
 
@@ -402,27 +391,27 @@
 
 									<div class="form-group ">
 
-										<label for="pwd">Purpose</label> 
-										<input type="text" id="validationServer01"
-											name="purpose" size="45" class="form-control is-valid " id="amount"
-											value="<c:out value='${EX1.purpose}' />" />
+										<label for="pwd">Purpose</label> <input type="text"
+											id="validationServer01" name="purpose" size="45"
+											class="form-control is-valid " class="form-control is-valid"
+											required id="amount" value="<c:out value='${EX1.purpose}' />" />
 
 									</div>
 
 									<div class="form-group">
 
-										<label for="pwd">Sum</label> 
-										<input type="text" name="sum" id="validationServer01"
-											class="form-control is-valid"   required id="amount" size="5"
+										<label for="pwd">Sum</label> <input type="text" name="sum"
+											id="validationServer01" class="form-control is-valid"
+											required id="amount" size="5"
 											value="<c:out value='${EX1.sum}' />" />
 									</div>
 
 
 									<div class="form-group">
 
-										<label for="pwd">Date</label>
-										 <input type="text" name="date" id="validationServer01"
-											class="form-control is-valid"   required id="date" size="45"
+										<label for="pwd">Date</label> <input type="text" name="date"
+											id="validationServer01" class="form-control is-valid"
+											required id="date" size="45"
 											value="<c:out value='${EX1.dfec}' />" />
 									</div>
 							</div>
@@ -430,25 +419,23 @@
 							<div class="d-flex justify-space-between">
 
 								<div class="form-check">
-									<label class="form-check-label"> 
-									<input type="radio" id="validationServer01"
-										class="form-check-input is-valid"   required name="dish" value="transport">Transport
+									<label class="form-check-label"> <input type="radio"
+										id="validationServer01" class="form-check-input is-valid"
+										required name="dish" value="transport">Transport
 									</label>
 								</div>
 
 								<div class="form-check">
-									<label class="form-check-label">
-									 <input type="radio" id="validationServer01"
-										class="form-check-input is-valid" required name="dish" value="home">
-										Home
+									<label class="form-check-label"> <input type="radio"
+										id="validationServer01" class="form-check-input is-valid"
+										required name="dish" value="home"> Home
 									</label>
 								</div>
 
 								<div class="form-check">
-									<label class="form-check-label"> 
-									<input type="radio" id="validationServer01"
-										class="form-check-input is-valid"  requiredname="dish" value="Travel">
-										Travel
+									<label class="form-check-label"> <input type="radio"
+										id="validationServer01" class="form-check-input is-valid"
+										required name="dish" value="Travel"> Travel
 									</label>
 								</div>
 
@@ -463,101 +450,106 @@
                             value="Save" /></colspan> -->
 							<!-- </table> -->
 							</form>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-
-			<div class="row ">
-
-
-				<div class="col-xl-8 col-lg-7">
-					<div class="card shadow mb-4">
-
-						<div
-							class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-							<h6 class="m-0 font-weight-bold text-primary">Map</h6>
-						</div>
-
-
-						<iframe class="w-100  "
-							src="https://www.google.com/maps/d/embed?mid=1XrwiOsj8gnAD6Nry_XEg8j3LCYxULrAZ"
-							width="640" height="480"></iframe>
-
-					</div>
-				</div>
-
-				<div class="col-xl-4 col-lg-5 table_section">
-					<div class="card shadow mb-4">
-
-						<div
-							class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-							<h6 class="m-0 font-weight-bold text-primary">Social Media</h6>
-
-
-						</div>
-						<img src="img/social.svg" class="social_img mt-4" alt="">
-						<!-- Card Body -->
-						<div
-							class="card-body text-center d-flex justify-content-around d-block">
-
-							<a href="https://en-gb.facebook.com/"><i
-								class="fa fa-facebook social_icon fa-3x d-block"></i>Facebook</a> <a
-								href="https://www.instagram.com/accounts/login/?hl=en"> <i
-								class="fa fa-instagram social_icon fa-3x d-block social_icon"></i>Instagram
-							</a> <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
-								class="fa fa-twitter  social_icon fa-3x d-block social_icon"></i>Twitter
-							</a>
 
 						</div>
 					</div>
 				</div>
 
-			</div>
+				<!-- 	</div> -->
+
+				<!---------------------- MAP------------------  -->
+				<div class="row ">
 
 
+					<div class="col-xl-8 col-lg-7">
+						<div class="card shadow mb-4">
+
+							<div
+								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+								<h6 class="m-0 font-weight-bold text-primary">Map</h6>
+							</div>
 
 
+							<iframe class="w-100  "
+								src="https://www.google.com/maps/d/embed?mid=1XrwiOsj8gnAD6Nry_XEg8j3LCYxULrAZ"
+								width="640" height="480"></iframe>
 
-
-
-			<div class="row  ">
-
-				<!-- Area Chart -->
-				<div class="col-xl-12  text-center  ">
-
-					<div class="bg-primary  p-4 m-2 shadow rounded ">
-						<a class="text-light" href="https://www.ucas.com/">UCAS</a>
-					</div>
-					<div class=" bg-success p-4 m-2 shadow rounded">
-						<a class="text-light" href="https://www.gov.uk/student-finance">STUDENT
-							FINANCE</a>
-					</div>
-
-					<div class="bg-danger p-4 m-2 shadow  rounded">
-						<a class="text-light" href="https://www.ukcisa.org.uk/">UKCISA</a>
+						</div>
 					</div>
 
-					<div class=" bg-warning p-4 m-2 shadow rounded">
-						<a class="text-light"
-							href="http://www.bbk.ac.uk/student-services/financial-support">BIRKBECK
-							FINANTIAL SUPPORT</a>
+
+					<!---------------------- SOCIAL MEDIA------------------  -->
+
+					<div class="col-xl-4 col-lg-5 table_section">
+						<div class="card shadow mb-4">
+
+							<div
+								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+								<h6 class="m-0 font-weight-bold text-primary">Social Media</h6>
+
+
+							</div>
+							<img src="img/social.svg" class="social_img mt-4" alt="">
+							<!-- Card Body -->
+							<div
+								class="card-body text-center d-flex justify-content-around d-block">
+
+								<a href="https://en-gb.facebook.com/"><i
+									class="fa fa-facebook social_icon fa-3x d-block"></i>Facebook</a> <a
+									href="https://www.instagram.com/accounts/login/?hl=en"> <i
+									class="fa fa-instagram social_icon fa-3x d-block social_icon"></i>Instagram
+								</a> <a href="https://www.instagram.com/accounts/login/?hl=en">
+									<i class="fa fa-twitter  social_icon fa-3x d-block social_icon"></i>Twitter
+								</a>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+
+
+
+				<div class="row  ">
+
+					<!-- Area Chart -->
+					<div class="col-xl-12  text-center  ">
+
+						<div class="bg-primary  p-4 m-2 shadow rounded ">
+							<a class="text-light" href="https://www.ucas.com/">UCAS</a>
+						</div>
+						<div class=" bg-success p-4 m-2 shadow rounded">
+							<a class="text-light" href="https://www.gov.uk/student-finance">STUDENT
+								FINANCE</a>
+						</div>
+
+						<div class="bg-danger p-4 m-2 shadow  rounded">
+							<a class="text-light" href="https://www.ukcisa.org.uk/">UKCISA</a>
+						</div>
+
+						<div class=" bg-warning p-4 m-2 shadow rounded">
+							<a class="text-light"
+								href="http://www.bbk.ac.uk/student-services/financial-support">BIRKBECK
+								FINANTIAL SUPPORT</a>
+						</div>
 					</div>
 				</div>
+
+
+
 			</div>
-
-			<div class="text-muted   mt-5 shadow">
-
-				<div class="footer-copyright text-center  text-muted py-3">
-					© 2020 Copyright: <a class="text-muted"
-						href="https://mdbootstrap.com/"> PBWA</a>
-				</div>
-			</div>
-
 		</div>
 	</div>
+	<div class="text-muted   mt-1 shadow">
+
+		<div class="footer-copyright text-center  text-muted py-3">
+			© 2020 Copyright: <a class="text-muted"
+				href="https://mdbootstrap.com/"> PBWA</a>
+		</div>
 	</div>
 
 
@@ -576,57 +568,55 @@
 </body>
 
 
-<!-- NAVIGATION LINKS  -->
-<!-- 
-	<a href="deposit.jsp" class="btn btn-primary m-1">Deposit</a>
-	<br />
-	<a href="index.jsp" class="btn btn-warning m-1">index</a>
-	<br />
-	<button class="btn btn-success m-1">logout</button>
-	<br />
-	<i class="fa fa-instagram fa-lg m-1"> Instagram</i>
-
-	<div class="chart">
-		<div id="chartContainer"></div>
-
-	</div>
-
-                <!-- ***************************** -->
 
 
-<h1 align="left">All Deposits</h1>
+
 
 <!-------------  TABLE DEPOSIT  -------- -->
-<!-------------  TABLE DEPOSIT  -------- -->
 
-<div class="row ">
-	<table class="table table-bordered table-striped">
+<div class="col-xl-8 col-lg-7   table_section ">
+	<div class="card shadow mb-4 secondary_table">
+		<!-- Card Header - Dropdown -->
+		<div
+			class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
+			<h6 class="m-0 font-weight-bold text-primary ">Deposit Table</h6>
+		</div>
 
-		<thead class="thead-light">
-			<tr class="bg-light">
-				<th scope="col">ID</th>
+		<table class="table table-bordered table-striped  ">
+
+
+			<thead class="thead-light ">
+
+				<tr class="bg-light  sticky-top ">
+						<th class="hide" scope="col">ID</th>
 				<th scope="col">Deposit</th>
 				<th scope="col">Date</th>
-			</tr>
-		</thead>
+				</tr>
 
-		<!-- DEPOSITE TABLE  -->
-		<c:forEach var="tempB" items="${ELISTBAL}">
-			<tr>
-				<td><c:out value="${tempB.id}" /></td>
-				<td><c:out value="${tempB.total}" /></td>
+			</thead>
+
+			<tbody>
+				<c:forEach var="tempB" items="${ELISTBAL}">
+
+					<tr>
+
+					<td class="hide"><c:out value="${tempB.id}" /></td>
+				<td><c:out value="${tempB.total} "  /> £</td>
 				<td><c:out value="${tempB.dfecdep}" /></td>
 
+						<%-- <td><a href="edit?id=<c:out value='${temp.id}' />"
+							class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+							href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td> --%>
+					</tr>
+							<c:set var="total" value="${total + tempB.total}" />
+				</c:forEach>
+			</tbody>
 
-			</tr>
 
-			<c:set var="total" value="${total + tempB.total}" />
-
-		</c:forEach>
-
-	</table>
-
+		</table>
+	</div>
 </div>
+
 
 
 <div class="chart">
