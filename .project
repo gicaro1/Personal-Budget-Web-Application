@@ -3,6 +3,7 @@
 	<name>Personal-Budget-Web-Application</name>
 	<comment></comment>
 	<projects>
+		<project>PBWA</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>

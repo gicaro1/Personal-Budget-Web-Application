@@ -110,12 +110,6 @@ public class controllerPBWA extends HttpServlet {
 
 		response.setContentType("text/html");
 
-
-
-
-
-	
-
 		if (Exp1.validate(username, userpass)) {
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 			
@@ -150,28 +144,10 @@ public class controllerPBWA extends HttpServlet {
 				rd.include(request, response);
 			}
 	}
-	
-//	<------------------------- LOGOUT---------------------->
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 //	<------------------- ********************------------->
+	
+	
 //	<--------------------- lIST METHODS -------------------->
 
 	private void listexpenses(HttpServletRequest request, HttpServletResponse response)
@@ -180,19 +156,10 @@ public class controllerPBWA extends HttpServlet {
 
 		List<ProductExpense> list1 = Exp1.listAll();
 		request.setAttribute("ELIST", list1);
-		
-		
-//		
+
 		List<BalanceT> list2 = Exp1.listBalance();
 		request.setAttribute("ELISTBAL", list2);
-		
-//		<---- SUM METHOD ----->
-		
-//	
-//		Double counterTotal = Exp1.SumAllDeposit(list2);
-		
-	
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
 		dispatcher.forward(request, response);
 

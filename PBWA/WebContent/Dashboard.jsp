@@ -376,28 +376,21 @@
 							</div>
 							<!-- FORM  -->
 							<div class="card-body">
-
-
 								<form class="needs-validation" action="insert" method="get">
-
 
 									<c:if test="${EX1 != null}">
 										<input type="hidden" name="id"
 											value="<c:out value='${EX1.id}' />" />
 									</c:if>
 
-
-
-
 									<div class="form-group ">
 
-										<label for="pwd">Purpose</label> <input type="text"
+											<label for="pwd">Purpose</label> <input type="text"
 											id="validationServer01" name="purpose" size="45"
 											class="form-control is-valid " class="form-control is-valid"
 											required id="amount" value="<c:out value='${EX1.purpose}' />" />
-
 									</div>
-
+									
 									<div class="form-group">
 
 										<label for="pwd">Sum</label> <input type="text" name="sum"
@@ -406,15 +399,14 @@
 											value="<c:out value='${EX1.sum}' />" />
 									</div>
 
-
 									<div class="form-group">
 
-										<label for="pwd">Date</label> <input type="text" name="date"
+											<label for="pwd">Date</label> <input type="text" name="date"
 											id="validationServer01" class="form-control is-valid"
 											required id="date" size="45"
 											value="<c:out value='${EX1.dfec}' />" />
 									</div>
-							</div>
+							 </div>
 
 							<div class="d-flex justify-space-between">
 
@@ -440,11 +432,8 @@
 								</div>
 
 							</div>
-
-
-
 							<button type="submit" class="btn btn-success btn-block mt-4 "
-								value="Save">Submit</button>
+								value="Submit">Submit</button>
 
 							<!-- <colspan colspan="2" align="center"><input type="submit"
                             value="Save" /></colspan> -->
@@ -588,9 +577,9 @@
 			<thead class="thead-light ">
 
 				<tr class="bg-light  sticky-top ">
-						<th class="hide" scope="col">ID</th>
-				<th scope="col">Deposit</th>
-				<th scope="col">Date</th>
+					<th class="hide" scope="col">ID</th>
+					<th scope="col">Deposit</th>
+					<th scope="col">Date</th>
 				</tr>
 
 			</thead>
@@ -600,15 +589,15 @@
 
 					<tr>
 
-					<td class="hide"><c:out value="${tempB.id}" /></td>
-				<td><c:out value="${tempB.total} "  /> £</td>
-				<td><c:out value="${tempB.dfecdep}" /></td>
+						<td class="hide"><c:out value="${tempB.id}" /></td>
+						<td><c:out value="${tempB.total} " /> £</td>
+						<td><c:out value="${tempB.dfecdep}" /></td>
 
 						<%-- <td><a href="edit?id=<c:out value='${temp.id}' />"
 							class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
 							href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td> --%>
 					</tr>
-							<c:set var="total" value="${total + tempB.total}" />
+					<c:set var="total" value="${total + tempB.total}" />
 				</c:forEach>
 			</tbody>
 
