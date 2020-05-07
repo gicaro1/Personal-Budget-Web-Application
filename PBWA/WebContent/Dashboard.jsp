@@ -79,12 +79,12 @@
 					<hr class="hr_line bg-light">
 
 					<h6 class="features_tittle">Features</h6>
-					<a class="text-light" href="#"><i
-						class="fa fa-folder p-2 ml-3 h6 "></i>Util</a><br>
+					<a class="text-light" href="about.jsp"><i
+						class="fa fa-folder p-2 ml-3 h6 "></i>About US</a><br>
 					<hr class="hr_line bg-light">
 
 					<h6 class="features_tittle">Recomendations</h6>
-					<a class="text-light " href="#"><i
+					<a class="text-light " href="tips.jsp"><i
 						class="fa fa-table p-2 ml-3 h6  "></i>Tips</a>
 				</div>
 

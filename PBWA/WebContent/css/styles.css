@@ -224,12 +224,19 @@ canvas{
 .tips{
     font-family: 'Ultra', serif;
     letter-spacing: 1rem;
+    height: 400px;
+    font-size: 150px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
      
 }
 
 .cardtip{
     max-width: 18rem;
-    margin: 20px;;
+    margin: 20px;
    
 }
 
@@ -251,6 +258,78 @@ canvas{
    	 margin: 15px;
 
    } 
+   
+
+/* ------- ABOUT US --------------- */
+
+.top_brand_seccion{
+
+    padding: 40px;
+}
+.main_tittle_top{
+font-size: 36px;;
+ color: #000000;
+ 
+ font-family: 'Bowlby One SC', cursive;
+}
+p{
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+
+.img_aboutUS{
+
+    height: 60px;
+}
+.row_cards{
+    padding: 20px;
+}
+
+.card_about{
+    width: 18rem;
+  
+
+}
+.img_review{
+    height: 50px;
+}
+.container_row2{
+
+    background-color: #eff2f3;
+}
+.container_row3{
+
+    background-color: #ffffff;
+    height: 400px;
+    font-family: 'Bowlby One SC', cursive;
+}
+.sub_container_3{
+    margin-top: 90px;
+
+}
+.sub_container_3 h1{
+   font-size: 70px;
+
+}
+
+.container_row4{
+
+    background-color: #eff2f3;
+    height: 400px;
+    font-family: 'Bowlby One SC', cursive;
+
+}
+.row_4_container h1{
+    padding-top: 80px;
+   
+}
+.para_third_section{
+    font-size: 22px;
+}
+.hidden_property{
+    display: none;
+}
 /* -------  MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
    .welcome_tittle h1{
