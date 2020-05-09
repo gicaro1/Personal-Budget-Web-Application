@@ -37,10 +37,10 @@
     
 <body >
 <!-- -------- TOGGLE BAR  -->
-    <div class="col-sm-2 bg-success side_bar  hidden_property text-light"  id="myDIV">
+    <div class="col-sm bg-success side_bar  hidden_property text-light"  id="myDIV">
                         
 
-        <div class="col-12-sm  col-3-sm py-1 d-inline-flex logo_col">
+        <div class="col-12-sm  col-12-sm py-1 d-inline-flex logo_col">
             <img src="/img/household-budget-logo.png"  class="logo mt-3 " alt="">
                 <h6 class="text-light  d-flex   pbwa_tittle ">PBWA</h6>
                 
@@ -83,42 +83,29 @@
     </div>
 
 
-    <div class="row shadow  nav_top ">
+
+    <div class="row shadow  nav_top container-fluid ">
         
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between ">
             
              <div class="container" onclick="myFunction(this)">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>     
             </div>
-           
-          
-            
-            
+            <div class="col-xs-2   p-3 w-40  d-flex  ">
+							<a href="#"><i class="fa fa-envelope  p-2"></i></a> <a href="#"><i
+								class="fa fa-bell  p-2"></i></a>
 
-          
-            
-                <!-- <div class="col-xs-4 input-group  mt-4 w-50  search_bar">
-                                <input type="file" class="custom-file-input" id="customFile">
-                                <label class="custom-file-label " for="customFile">Search...</label>
-                </div> -->
-              
-                        <!-- <form class="form-inline search_bar ">
-                          <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form> -->
-                  
-                <!-- <div class="col-xs-2   p-3 w-40  d-flex  ">
-                        <a href="#"><i class="fa fa-envelope  p-2"></i></a> 
-                        <a href="#"><i class="fa fa-bell  p-2"></i></a> 
-                        
-                </div>
-                <div class="col-xs-4  d-flex profile_img_wrapper  text-center">
+						</div>
+						
+						<div class="col-xs-4  d-flex profile_img_wrapper  text-center">
 
-                      <img class="profile_pic " src="/img/profile2.jpeg" alt=""> 
-                      <p class="d-flex  profile_name "></p>
-                </div>  -->
+							<img class="profile_pic " src="img/profile2.jpeg" alt="">
+							<p class="d-flex  profile_name ">
+								<c:out value="${USER_SESSION}" />
+							</p>
+						</div>
         </div>
     </div>
 <!--  *************** END ****************** -->

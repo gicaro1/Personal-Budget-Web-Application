@@ -159,11 +159,20 @@ public class controllerPBWA extends HttpServlet {
 
 		List<BalanceT> list2 = Exp1.listBalance();
 		request.setAttribute("ELISTBAL", list2);
+		
+		
+//		 RequestDispatcher rd;
+//         rd = getServletContext().getRequestDispatcher("/Dashboard.jsp");
+//         rd = getServletContext().getRequestDispatcher("/deposit.jsp");
+//         rd.forward(request, response);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
+		
 		dispatcher.forward(request, response);
 
 	}
+	
+
 	
 //
 //	private void listBalance(HttpServletRequest request, HttpServletResponse response)

@@ -112,43 +112,18 @@
                                                min="1000-01-01" class="form-control shadow"  id="validationServer01"   required  >
                                        </div>
                                       
-                                    <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow">save</button>
+                                    <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow">Deposit</button>
                                 
                                 </form>
 
                     </div>
              
                     <hr>
-                    <div class="text-center">
-                    
-                        <div class="text-center">
-                            <!-- register link  -->
-                                <a class="small" href="register.html">Go to register!</a>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
            
-            <div class="row m-3 bal_A ">
-            
-                
-
-                <div class="col-12 bg-light  shadow  text-left  border_line2  d-flex  justify-content-between py-2 mt-2 bal_B">
-                                          
-                        <div class="col-xs-9  w-80  h-40 py-3  text-center d-flex align-itmes-center bal_C">
-                                      
-                                        <h3><i class="fa fa-dollar pr-1"></i>1126.78 </h3>
-                        </div>
-
-                        <div class="col-sm-3 ">
-
-                                        <i class="fa fa-money fa-3x d-flex justify-content-center mt-2 pl-5 transport_logo "></i>
-                        </div>
-                              
-                </div>
-
-
-            </div>
+       
             </div>
            
       

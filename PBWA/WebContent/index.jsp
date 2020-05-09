@@ -18,8 +18,10 @@
 <!-- Font awesome -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- bootraap -->
 
+  <!--  ----------ANIMATE-CDN ----------- --> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<!-- bootraap -->
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -32,11 +34,12 @@
 
 </head>
 <body>
-	
 
-	
+
+
 	<div class="col-12-sm m-2 py-4 welcome_tittle text-muted  w-100">
-		<h1 class=" text-center ">Personal budget Web Application</h1>
+		<h1 class=" text-center animated  fadeInDown delay-2s">Personal budget Web Application</h1>
+		
 		<!-- <img src="/img/geometry.jpg" class="bg" alt=""> -->
 
 
@@ -52,12 +55,13 @@
 		<div class="col-lg-5  ">
 
 			<div class="container  ">
-			
+
 
 				<div class="  card p-3 mt-3 login_main_container ">
 					<div class="text-center card-header bg-success rounded shadow">
 						<h1 class="h1 text-light my-4  card_welcome_tittle ">Welcome
-							Back!</h1> <%-- <c:out value="${USER_SESSION}"/> --%>
+							Back!</h1>
+						<%-- <c:out value="${USER_SESSION}"/> --%>
 					</div>
 
 					<div class="car-body pt-3">
@@ -68,26 +72,25 @@
 
 								<form class="needs-validation" action="login" method="get"
 									class="user">
-									
-									
-									
+
+
+
 
 									<div class="form-group shadow">
 
-										<input type="text" name="username"  id="validationServer01"
-											class="form-control is-valid  input_login form-control-user  " required
-											
-											aria-describedby="emailHelp" placeholder="Name:">
+										<input type="text" name="username" id="validationServer01"
+											class="form-control is-valid  input_login form-control-user  "
+											required aria-describedby="emailHelp" placeholder="Name:">
 									</div>
-									
-									
-									
-									
-									
-									
-									
-									
-								
+
+
+
+
+
+
+
+
+
 
 									<div class="form-group shadow">
 
@@ -107,10 +110,17 @@
 									alert"r" role="alert">
 									<c:out value="${MESSAGE}" />
 								</div> --%>
-								<button type="button" class="close" data-dismiss="alert"
+							<%-- 	<button type="button" class="close" data-dismiss="alert"
 									aria-label="Close">
 									<span aria-hidden="true"> <c:out value="${MESSAGE}" /></span>
-								</button>
+								</button> --%>
+
+								<div class="alert alert-danger mt-2 text-center alert-dismissible fade show" role="alert"><c:out value="${MESSAGE}" />
+								
+								
+								
+								
+								</div>
 							</c:when>
 
 
@@ -122,13 +132,7 @@
 
 						</c:choose>
 					</div>
-					<!-- 	<form action="logout" method="post">
-						<input type="submit" value="logout"
-							class="btn btn-outline-danger btn-lg  btn-block shadow mt-1" />
-					</form> -->
-					<!--  <form action="logout" method="post" >
-                        <input type="submit" value="logout" class="btn-danger" />
-                    </form> -->
+
 					<hr>
 					<div class="text-center">
 
@@ -142,54 +146,9 @@
 		</div>
 	</div>
 </body>
-<%-- <body>
-	<h1>Login</h1>
 
-	<div align="center">
-
-
-
-		<c:choose>
-
-
-			<c:when test="${username == null }">
-
-				<form action="login" method="get">
-				
-				
-					Name:<input type="text" name="username" /><br /> <br />
-					Password:<input type="password" name="userpass" /><br /> <br />
-					
-					<input type="submit" value="login" />
-					<a href="${pageContext.request.servletContext.contextPath }/Logout">logout</a>
-			
-				</form>
-				<form action="logout" method="post" >
-					<input type="submit" value="logout" class="btn-danger" />
-				</form>
-					
-				
-					<div class=" alert alert-sucesss" role="alert">
-					<strong>you are signed in ${username }</strong>
-
-				</div>
-
-			</c:when>
-
-			<c:otherwise>
-			
-		<!-- 		<div>
-					<a href="/Logout">logout</a>
-		
-				</div> -->
-			
-
-			</c:otherwise>
-		</c:choose>
-
-
-
-	</div>
-
-</body> --%>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
 </html>

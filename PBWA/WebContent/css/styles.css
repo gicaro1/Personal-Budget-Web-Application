@@ -22,10 +22,10 @@ body{
     
 
 }
-/* .test1{
-	font-size: 45px;
-	background-color: green;
-} */	
+
+.alert_login{
+	background-color:#ffffff;
+}
 
 /*-------bar SIDE------- */
 .logo{
@@ -336,12 +336,19 @@ p{
        margin-top: 30px;
        font-size: 20px;
    } 
+     .das_t{
+        font-family: 'Orbitron', sans-serif;
+       letter-spacing: .3rem;
+     
+      text-align: center;
+    }
    
    /* ----- LOGOUT BUTTON ------- */
    
    .containerFluidLogout{
-   		  display: block; 
+   		 
    		  flex-direction: column;
+   		
    }
    
     .logout_btn {
@@ -389,15 +396,8 @@ p{
    .main_row{
        display: none;
    }
-   .Dashboard_tittle{
-    text-align: center;
-    font-family: 'Orbitron', sans-serif !important ;
-    font-size: 25px;
-    font-weight: 100;
-    letter-spacing: .4rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
+
+
     .profile_img_wrapper img{
         width: 40px;
         height: 40px;
