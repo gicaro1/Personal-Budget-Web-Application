@@ -519,7 +519,7 @@
 
 			</div>
 		</div>
-	</div>
+		</div>
 	
 	<!-------- FOOTER ------ -->
 	<div class="text-muted   mt-1 shadow">

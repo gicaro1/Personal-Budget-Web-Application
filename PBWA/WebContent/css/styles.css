@@ -1,10 +1,11 @@
 /* GENERAL SETTINGS */
-body{
-    font-family: 'Nunito', sans-serif;
-    background-color: #f4f5f8
+body {
+	font-family: 'Nunito', sans-serif;
+	background-color: #f4f5f8
 }
-.hr_line{
-    opacity: .3; 
+
+.hr_line {
+	opacity: .3;
 }
 /* .bg{
 
@@ -15,461 +16,332 @@ body{
   position: absolute;
 
 } */
+
+
 /* -------------------------  //  ---------------- */
-.welcome_tittle{
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: .4rem;
-    
-
+.welcome_tittle {
+	font-family: 'Orbitron', sans-serif;
+	letter-spacing: .4rem;
+}
+.welcome_tittle h1{
+	
+	font-size: 14px;
 }
 
-.alert_login{
-	background-color:#ffffff;
+
+.alert_login {
+	background-color: #ffffff;
 }
+
 
 /*-------bar SIDE------- */
-.logo{
-    height: 50px;
-    width: 50px;
-  }
-
-.side_bar{
-
-    height: auto;
-
-  }
-.pbwa_tittle{
-
-    margin-top: 30px;
-    padding-left: 5px;
-    font-size: 25px;
-    
+.logo {
+	height: 50px;
+	width: 50px;
 }
-.das_t{
-    font-family: 'Orbitron', sans-serif;
-   letter-spacing: .4rem;
-   font-weight: 100;
-   font-size: 18px;
-  text-align: center;
 
+.side_bar {
+	height: auto;
 }
-.profile_name{
 
-    margin-top: 22px;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: .1rem
-   }
+.pbwa_tittle {
+	margin-top: 30px;
+	padding-left: 5px;
+	font-size: 25px;
+}
+
+.das_t {
+	font-family: 'Orbitron', sans-serif;
+	letter-spacing: .4rem;
+	font-weight: 100;
+	font-size: 18px;
+	text-align: center;
+}
+
+.profile_name {
+	margin-top: 22px;
+	font-family: 'Orbitron', sans-serif;
+	letter-spacing: .1rem
+}
 
 /* <----- deskboard  ------>*/
 
-
 /* <----- Interface ------>*/
+.interface i {
+	opacity: 0.4;
+}
 
-.interface i{
-       opacity: 0.4; 
-
-    }
-
-
-.features_tittle{
-    opacity: 0.4;
-
+.features_tittle {
+	opacity: 0.4;
 }
 /* <----- interface  ------>*/
 
-
-
 /* ----  Nav-top ------- */
-.profile_pic{
-    height: 50px;
-    width: 50px;
-    margin: 10px ;
-    border-radius: 50%;
-    
+.profile_pic {
+	height: 50px;
+	width: 50px;
+	margin: 10px;
+	border-radius: 50%;
 }
 
-.transport_logo{
-    opacity: .6;
-    color: lightgray;
-
-}
-a{
-    text-decoration: none !important;
-}
-.social_img{
-    height: 310px;
-    width: auto;
+.transport_logo {
+	opacity: .6;
+	color: lightgray;
 }
 
-
-
-.border_line{
-    border-left: 5px solid red;
-    border-radius: 4px;
-}
-.border_line1{
-    border-left: 3px solid blue;
-}
-.border_line2{
-    border-left: 3px solid green;
-}
-.border_line3{
-    border-left: 3px solid orange;
-}
-.fa-money{
-    opacity: .3;
+a {
+	text-decoration: none !important;
 }
 
-.form_img{
-
-    height: 80px;
-    width: 80px;
+.social_img {
+	height: 310px;
+	width: auto;
 }
 
-.table_heading{
-
-    background-color: #d2eed9;
-
-}
-.search_bar{
-   margin-left: 0;
+.border_line {
+	border-left: 5px solid red;
+	border-radius: 4px;
 }
 
-
-
-.hide{
-
-visibility: hidden;
-display: none;
-
+.border_line1 {
+	border-left: 3px solid blue;
 }
 
+.border_line2 {
+	border-left: 3px solid green;
+}
 
-.table_headers{
-	 position: sticky;
-   position: -webkit-sticky;
-   /*  position: -moz-sticky;
+.border_line3 {
+	border-left: 3px solid orange;
+}
+
+.fa-money {
+	opacity: .3;
+}
+
+.form_img {
+	height: 80px;
+	width: 80px;
+}
+
+.table_heading {
+	background-color: #d2eed9;
+}
+
+.search_bar {
+	margin-left: 0;
+}
+
+.hide {
+	visibility: hidden;
+	display: none;
+}
+
+.table_headers {
+	position: sticky;
+	position: -webkit-sticky;
+	/*  position: -moz-sticky;
     position: -ms-sticky;
     position: -o-sticky; */
-	
-  top: 0;
-/* class="position-sticky" */
-	
-
-}
-.secondary_table{
-		 position: sticky;
-	
-	  height: 420px;
-	  overflow: scroll;
-
+	top: 0;
+	/* class="position-sticky" */
 }
 
-.logout{
+.secondary_table {
+	position: sticky;
+	height: 420px;
+	overflow: scroll;
+}
+
+.logout {
 	left: 0;
 }
 /* ----------- IPAD MEDIA QUERIES------------ */
-
-
-@media only screen and (max-width: 768px) 
-    {
-    .side_bar{
-        height: auto;
-       
-    
-    
-    }
-    .pbwa_tittle{
-
-        margin-top: 34px;
-        padding-left: 5px;
-        font-size: 15px; 
-    }
-
-  
-    .features_tittle{
-       
-    }
-    .interface{
-        display: inline;
-    }
-    .das_t{
-        font-family: 'Orbitron', sans-serif;
-       letter-spacing: .3rem;
-       font-size: 12px;
-      text-align: left;
-
-    }
-    .profile_name{
-
-        margin-top: 22px;
-        font-family: 'Orbitron', sans-serif;
-        letter-spacing: .1rem
-       }
-   
-
+@media only screen and (max-width: 768px) {
+	.side_bar {
+		height: auto;
+	}
+	.pbwa_tittle {
+		margin-top: 34px;
+		padding-left: 5px;
+		font-size: 15px;
+	}
+	.interface {
+		display: inline;
+	}
+	.das_t {
+		font-family: 'Orbitron', sans-serif;
+		letter-spacing: .3rem;
+		font-size: 12px;
+		text-align: left;
+	}
+	.profile_name {
+		margin-top: 22px;
+		font-family: 'Orbitron', sans-serif;
+		letter-spacing: .1rem
+	}
 }
 /* --------  PIE CHART GRAPH ------ */
-canvas{
-
-    height:  500px;
-    width: 400px;
+canvas {
+	height: 500px;
+	width: 400px;
 }
-
 
 /* ---------- TIPS PAGE----------- */
-
-
-
-.tips{
-    font-family: 'Ultra', serif;
-    letter-spacing: 1rem;
-    height: 400px;
-    font-size: 150px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-     
+.tips {
+	font-family: 'Ultra', serif;
+	letter-spacing: 1rem;
+	height: 400px;
+	font-size: 150px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.cardtip{
-    max-width: 18rem;
-    margin: 20px;
-   
+.cardtip {
+	max-width: 18rem;
+	margin: 20px;
 }
 
 /* ******************* */
 
-  /* ----- LOGOUT BUTTON ------- */
-   
-   .containerFluidLogout{
-   		  display: flex; 
-   	
-   	
-   }   
-    .logout_btn {
+/* ----- LOGOUT BUTTON ------- */
+.containerFluidLogout {
+	display: flex;
+}
 
-   	 width: 100%;
-    font-family: 'Nunito', sans-serif;
- 
-   	 font-size: 20px;
-   	 margin: 15px;
-
-   } 
-   
+.logout_btn {
+	width: 100%;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	margin: 15px;
+}
 
 /* ------- ABOUT US --------------- */
 
-.top_brand_seccion{
 
-    padding: 40px;
-}
-.main_tittle_top{
-font-size: 36px;;
- color: #000000;
- 
- font-family: 'Bowlby One SC', cursive;
-}
-p{
-    font-family: 'Open Sans Condensed', sans-serif;
-
-}
-
-
-.img_aboutUS{
-
-    height: 60px;
-}
-.row_cards{
-    padding: 20px;
-}
-
-.card_about{
-    width: 18rem;
-  
-
-}
-.img_review{
-    height: 50px;
-}
-.container_row2{
-
-    background-color: #eff2f3;
-}
-.container_row3{
-
-    background-color: #ffffff;
-    height: 400px;
-    font-family: 'Bowlby One SC', cursive;
-}
-.sub_container_3{
-    margin-top: 90px;
-
-}
-.sub_container_3 h1{
-   font-size: 70px;
-
-}
-
-.container_row4{
-
-    background-color: #eff2f3;
-    height: 400px;
-    font-family: 'Bowlby One SC', cursive;
-
-}
-.row_4_container h1{
-    padding-top: 80px;
-   
-}
-.para_third_section{
-    font-size: 22px;
-}
-.hidden_property{
-    display: none;
+.hidden_property {
+	display: none;
 }
 /* -------  MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
-   .welcome_tittle h1{
-       margin-top: 30px;
-       font-size: 20px;
-   } 
-     .das_t{
-        font-family: 'Orbitron', sans-serif;
-       letter-spacing: .3rem;
-     
-      text-align: center;
-    }
-   
-   /* ----- LOGOUT BUTTON ------- */
-   
-   .containerFluidLogout{
-   		 
-   		  flex-direction: column;
-   		
-   }
-   
-    .logout_btn {
-
-   	 width: 80vw;
-   	 margin: 0 auto;
-    font-family: 'Nunito', sans-serif;
-   	 padding: 10px;
-   	 font-size: 20px;
-
-   }
-   /* **************** */
-   .profile_name{
-
-    margin-top: 18px;
-    font-family: 'Orbitron', sans-serif;
-    letter-spacing: .1rem
-   }
-  
-   .card_welcome_tittle{
-       font-size: 25px
-   }
-
-   .card{
-   height: 75vh;
-   margin-top: 30px !important;
-   overflow: hidden;
-
-   }
-
-   .side_bar{
-       
-       position: absolute;
-       width: 100%;
-       display: none;
-       height: 90vh;
-       z-index: 1;
-       margin-top: 100px;
-       transition: 0.7s;
- 
-   }
-   .search_bar{
-       display: none;
-   }
-   .main_row{
-       display: none;
-   }
+	
+	/*------ ABOUT US QUERIES ------  */
 
 
-    .profile_img_wrapper img{
-        width: 40px;
-        height: 40px;
-        border: 1px solid #080808
-       
-    }
-    iframe{
-        height: 100%;
-    }
-    .balance_section, table_section{
-        height: 80vh;
-    }
-    .row .table_section .card{
-        height: auto;
-        overflow: hidden;
-    }
-    .row_login_container{
-        height: 100vh;
-    }
-    .card_container{
-        height: auto;
-    }
+	
+	.das_t {
+		font-family: 'Orbitron', sans-serif;
+		letter-spacing: .3rem;
+		text-align: center;
+	}
 
+	/**********************/
+	
+	
+	
 
+	/* ----- LOGOUT BUTTON ------- */
+	.containerFluidLogout {
+		flex-direction: column;
+	}
+	.logout_btn {
+		width: 80vw;
+		margin: 0 auto;
+		font-family: 'Nunito', sans-serif;
+		padding: 10px;
+		font-size: 20px;
+	}
+	/* **************** */
+	.profile_name {
+		margin-top: 18px;
+		font-family: 'Orbitron', sans-serif;
+		letter-spacing: .1rem
+	}
+	.card_welcome_tittle {
+		font-size: 25px
+	}
+	/* .card {
+	height: 75vh; 
+		margin-top: 30px !important;
+		overflow: hidden; 
+	} */
+	.side_bar {
+		position: absolute;
+		width: 100%;
+		display: none;
+		height: 90vh;
+		z-index: 1;
+		margin-top: 100px;
+		transition: 0.7s;
+	}
+	.search_bar {
+		display: none;
+	}
+	.main_row {
+		display: none;
+	}
+	.profile_img_wrapper img {
+		width: 40px;
+		height: 40px;
+		border: 1px solid #080808
+	}
+	iframe {
+		height: 100%;
+	}
+	.balance_section, table_section {
+		height: 80vh;
+	}
+	.row .table_section .card {
+		height: auto;
+		overflow: hidden;
+	}
+	.row_login_container {
+		height: 100vh;
+	}
+	.card_container {
+		height: auto;
+	}
 
-    /* togle burguer Menu  */
-    .container {
-        display: inline-block;
-     
-        cursor: pointer;
-        margin-top: 20px;
-       
-      }
-    .bar1, .bar2, .bar3 {
-        width: 35px;
-        height: 5px;
-        background-color: #333;
-        margin: 4px 0;
-        transition: 0.4s;
-       
-      }
-      
-      .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
-      }
-      
-      .change .bar2 {opacity: 0;}
-      
-      .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-8px, -8px);
-        transform: rotate(45deg) translate(-8px, -8px);
-      }
-    .nav_top{
-        height: 100px;
-        z-index: -1;
-    }
-    .row_login_container .bal_A .bal_B .bal_C{
-        font-size: 10px;
- 
-       
-    }
-
-    .cardtip{
-        height: auto;
-        max-width: 95%;
-        margin: 10px;;
-        /* margin-bottom: 0px;; */
-    }
-    .card-header{
-        font-size: 1.5rem;;
-    }
-
-  
-  }
+	/* -------togle burguer Menu------  */
+	.container {
+		display: inline-block;
+		cursor: pointer;
+		margin-top: 20px;
+	}
+	.bar1, .bar2, .bar3 {
+		width: 35px;
+		height: 5px;
+		background-color: #333;
+		margin: 4px 0;
+		transition: 0.4s;
+	}
+	.change .bar1 {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		transform: rotate(-45deg) translate(-9px, 6px);
+	}
+	.change .bar2 {
+		opacity: 0;
+	}
+	.change .bar3 {
+		-webkit-transform: rotate(45deg) translate(-8px, -8px);
+		transform: rotate(45deg) translate(-8px, -8px);
+	}
+	.nav_top {
+		height: 100px;
+		z-index: -1;
+	}
+	.row_login_container .bal_A .bal_B .bal_C {
+		font-size: 10px;
+	}
+	.cardtip {
+		height: auto;
+		max-width: 95%;
+		margin: 10px;;
+		/* margin-bottom: 0px;; */
+	}
+	.card-header {
+		font-size: 1.5rem;;
+	}
+}
