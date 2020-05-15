@@ -2,9 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.*"%>
-<%@ page import="com.google.gson.Gson"%>
-<%@ page import="com.google.gson.JsonObject"%>
 <!DOCTYPE html>
+<%-- <%@ page  import="java.awt.*" %> --%>
+<%@ page import="java.io.*"%>
+<%@ page import="org.jfree.chart.*"%>
+<%@ page import="org.jfree.chart.plot.*"%>
+<%@ page import="org.jfree.data.general.*"%>
+
+
 <html>
 <head>
 
@@ -13,23 +18,35 @@
 
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-	<!-- google Fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800i&display=swap"rel="stylesheet">
-	<!-- Font awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- bootraap -->
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- StylesSheet  -->
-	<link rel="stylesheet" href="http://localhost:8080/PBWA/css/styles.css" />
-	
-	<title>Dashboard</title>
+<!-- google Fonts-->
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:400,700,800i&display=swap"
+	rel="stylesheet">
+<!-- Font awesome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- bootraap -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- StylesSheet  -->
+<link rel="stylesheet" href="http://localhost:8080/PBWA/css/styles.css" />
+
+<title>Dashboard</title>
 </head>
 
 <body>
+	<%--  <%
+		Double  transportChartPie  =  (Double)pageContext.getAttribute("TransporTotal"); 
+		Double  homeChartPie  =  (Double)pageContext.getAttribute("HomeTotal"); 
+		Double  TravelChartPie  =  (Double)pageContext.getAttribute("TravelTotal"); 
+
+	%>  --%>
 	<div class="container-fluid">
 
 		<div class="row ">
@@ -97,7 +114,7 @@
 								class="fa fa-bell  p-2"></i></a>
 
 						</div>
-						
+
 						<div class="col-xs-4  d-flex profile_img_wrapper  text-center">
 
 							<img class="profile_pic " src="img/profile2.jpeg" alt="">
@@ -114,28 +131,28 @@
 				<c:set var="TravelTotal" value="${0}" />
 				<c:set var="HomeTotal" value="${0}" />
 				<c:set var="total" value="${0}" />
-				
-					<%-- <c:set var="total" value="${total + temp.sum}" /> --%>
-			<%-- 	<c:set var="tastCategoryItem" value="${0}" /> --%>
 
-			<%-- 	<c:set var="len" value="${ELIST.indexOf(ELIST.size()-1)}" /> --%>
-			
+				<%-- <c:set var="total" value="${total + temp.sum}" /> --%>
+				<%-- 	<c:set var="tastCategoryItem" value="${0}" /> --%>
+
+				<%-- 	<c:set var="len" value="${ELIST.indexOf(ELIST.size()-1)}" /> --%>
+
 
 				<!-------  FOR LOOP CATEGORY EXPENSES --------->
 				<c:forEach var="temp" items="${ELIST}">
 					<c:choose>
-						
+
 						<c:when test="${temp.category eq 'transport'}">
 							<c:set var="TransporTotal" value="${TransporTotal + temp.sum}" />
-							
+
 							<c:set var="total" value="${total - temp.sum}" />
-							
+
 						</c:when>
-						
-				
+
+
 						<c:when test="${temp.category eq 'Travel'}">
 							<c:set var="TravelTotal" value="${TravelTotal + temp.sum}" />
-							
+
 							<c:set var="total" value="${total - temp.sum}" />
 						</c:when>
 
@@ -146,42 +163,21 @@
 
 						</c:otherwise>
 					</c:choose>
-					
+
 				</c:forEach>
 				<!--------- FOR EACH LOOP FOR DEPOSIT TABLE ----------  -->
 				<c:forEach var="tempB" items="${ELISTBAL}">
-						<c:set var="total" value="${total + tempB.total}" />
-			
+					<c:set var="total" value="${total + tempB.total}" />
+
 				</c:forEach>
-	
-	
-	<!--**********  -->
+				<!--**********  -->
 
-				<!-- BALANCE SUM SECTION   -->
 
-				<%-- 		<div align="center">
-		
-			<h1>Category Bar</h1>
-
-			BALANCE
-			<c:out value="${total}" />
-		</div> --%>
-
-				<!--  CATEGORY SECTION   -->
-				<%-- 		<div align="center">
-
-			TRANSPORT
-			<c:out value="${TransporTotal}" />
-			<br> TRAVEL
-			<c:out value="${TravelTotal}" />
-			<br> HOME
-			<c:out value="${HomeTotal}" />
-
-		</div> --%>
 				<!-----------------LOGOUT BUTTON-------------  -->
 
-				<div class=" justify-content-between container-fluid containerFluidLogout ">
-				
+				<div
+					class=" justify-content-between container-fluid containerFluidLogout ">
+
 					<div class="Dashboard_tittle_container text-center">
 						<h1 class="text-right pt-3 Dashboard_tittle text-center">Dashboard</h1>
 					</div>
@@ -197,22 +193,25 @@
 					</div>
 				</div>
 				<!-- ***** END ***** -->
-				
-				
+
+
 				<!--------- EXPENSES SECTION TRAVEL-TRANSPOR-BALANCE-HOME  -->
-				
-				
-					<!-- ------------Balance  ------------ -->
-			
+
+
+				<!-- ------------Balance  ------------ -->
+
 				<div class=" container-fluid">
-				
+
 					<div class="row  pb-3 balance_section">
 
 						<div class="col bg-light m-2 shadow p-2  border_line  d-flex">
 
 							<div class="col-xs-2  w-50  h-40 text-center">
 								<h4>Balance</h4>
-								<h3><i class="fa fa-dollar pr-1"></i><c:out value="${total}" /></h3>
+								<h3 id="transp">
+									<i class="fa fa-dollar pr-1"></i>
+									<c:out value="${total}" />
+								</h3>
 							</div>
 
 							<div class="col-xs-2 w-50">
@@ -228,7 +227,7 @@
 
 							<div class="col-xs-2  w-50 text-center">
 								<h4>Transport</h4>
-								<h3>
+								<h3 id='trans'>
 									<i class="fa fa-dollar pr-1"></i>
 									<c:out value="${TransporTotal}" />
 								</h3>
@@ -238,11 +237,11 @@
 									class="fa fa-bus fa-3x d-flex justify-content-center mt-3 pl-5  transport_logo"></i>
 							</div>
 						</div>
-						
-					
 
-							<!-- ------------ Home  ------------ -->
-						
+
+
+						<!-- ------------ Home  ------------ -->
+
 						<div class="col bg-light m-2 shadow p-2 border_line2 d-flex">
 
 							<div class="col-xs-2 w-50 text-center ml-1">
@@ -260,20 +259,20 @@
 							</div>
 
 						</div>
-						
-						
-						
-					
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						<!-- --------------Travel ------------ -->
 						<div class=" col  bg-light m-2 shadow p-2 border_line3 d-flex">
 							<div class="col-xs-4  w-50 text-center">
@@ -293,150 +292,262 @@
 
 					</div>
 				</div>
-				
-					<!--******** END******* -->
-				
+
+				<!--******** END******* -->
 
 
-				<!-- ----------------- TABLE EXPENSES------------------ -->
-
+				<!------- CHART---------->
 				<div class="row  ">
 
+
+					<!-- BAR CHART -->
 					<div class="col-xl-8 col-lg-7   table_section ">
 						<div class="card shadow mb-4 secondary_table">
-						
+
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
 								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
 							</div>
 
-							<table class="table table-bordered table-striped  ">
+							<table class="  ">
 
 
-								<thead class="thead-light ">
 
-									<tr class="bg-light  sticky-top ">
-										<th class="hide" scope="col">ID</th>
-										<th scope="col">Purpose</th>
-										<th scope="col">Category</th>
-										<th scope="col">Sum</th>
-										<th scope="col">Date</th>
-										<th scope="col">Actions</th>
-									</tr>
 
-								</thead>
+								<div>
 
-								<tbody>
-									<!-- -----------FOR LOOP 2 ------------ -->
-								
-									<c:forEach var="temp" items="${ELIST}">
-
-										<tr>
-
-											<td class="hide"><c:out value="${temp.id} " /></td>
-
-											<td><c:out value="${temp.purpose}" /></td>
-
-											<td><c:out value="${temp.category}" /></td>
-
-											<td><c:out value="${temp.sum}" /></td>
-
-											<td><c:out value="${temp.dfec}" /></td>
-
-											<td><a href="edit?id=<c:out value='${temp.id}' />"
-												class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-												href="delete?id=<c:out value='${temp.id}' />"
-												class="btn-delete">Delete</a></td>
-										</tr>
-									</c:forEach>
-								</tbody>
+									<div class="p-4" id="columnchart_material"
+										style="width: 700px; height: 350px;"></div>
+								</div>
 
 
 							</table>
 						</div>
 					</div>
 
-							<!------------ FORM------------->
-					<div class="col-xl-4 col-lg-5  table_section">
+					<!------------ PIE CHART ------------->
+					<div class="col-xl-4 col-lg-5  table_section ">
 						<div class="card shadow mb-4">
 
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 								<h6 class="m-0 font-weight-bold text-primary">form Expenses</h6>
 							</div>
-					
-							
+
+
 							<div class="card-body">
-							
-								<form class="needs-validation" action="insert" method="get">
+								<div class="mb-4" id="piechart"
+									style="width: 330px; height: 300px;"></div>
 
-									<c:if test="${EX1 != null}">
-										<input type="hidden" name="id"
-											value="<c:out value='${EX1.id}' />" />
-									</c:if>
-
-									<div class="form-group ">
-
-											<label for="pwd">Purpose</label> <input type="text"
-											id="validationServer01" name="purpose" size="45"
-											class="form-control is-valid " class="form-control is-valid"
-											required id="amount" value="<c:out value='${EX1.purpose}' />" />
-									</div>
-									
-									<div class="form-group">
-
-										<label for="pwd">Sum</label> <input type="text" name="sum"
-											id="validationServer01" class="form-control is-valid"
-											required id="amount" size="5"
-											value="<c:out value='${EX1.sum}' />" />
-									</div>
-
-										 <div class="form-group d-flex align-items-center rounded">
-                                        <label class="p-2 m-1 text-muted rounded shadow is-valid" >Date</label>
-                                         <input type="date" name="date" max="3000-12-31" 
-                                               min="1000-01-01" class="form-control shadow"  id="validationServer01"   required  >
-                                       </div>
-                                      
-							 </div>
-							 
-							 <!--------- RADIO BUTTONS ------  -->
-
-							<div class="d-flex justify-space-around  align-items-center container ">
-
-								<div class="form-check mr-4 text-center">
-									<label class="form-check-label"> <input type="radio"
-										id="validationServer01" class="form-check-input is-valid"
-										required name="dish" value="transport">Transport
-									</label>
-								</div>
-
-								<div class="form-check mr-4">
-									<label class="form-check-label"> <input type="radio"
-										id="validationServer01" class="form-check-input is-valid"
-										required name="dish" value="home"> Home
-									</label>
-								</div>
-
-								<div class="form-check mr-4">
-									<label class="form-check-label"> <input type="radio"
-										id="validationServer01" class="form-check-input is-valid"
-										required name="dish" value="Travel"> Travel
-									</label>
-								</div>
 
 							</div>
-							<button type="submit" class="btn btn-success btn-block mt-4 "
-								value="Submit">Submit</button>
-
-							</form>
-
 						</div>
 					</div>
-				</div>	
-				<!--******** END FORM******  -->
-				
-				
+</div>
+					
+
+
+					<!-- <div id="piechart" style="width: 450px; height: 400px;"></div> -->
+					<!-- <div id="barchart_material" style="width: 440px; height: 300px;"></div> -->
+
+					<%-- 		
+					
+					<%
 			
+					DefaultPieDataset data = new  DefaultPieDataset();
+					data.setValue("Enero",5000);
+					data.setValue("Febrero",200);
+					data.setValue("Marzo",5000);
+					data.setValue("Abril",5000);
+					
+					/*  ---------generate graph ------ */
+					JFreeChart  expenses_Pie_Chart = ChartFactory.createPieChart("Expenses",data,true,true,true      );
+					
+					/*----- where the graph gonna be shown ----- */
+					
+					response.setContentType("image/JPEG");
+					OutputStream sa=response.getOutputStream();
+					
+					/* ---- print graph---- */
+					ChartUtilities.writeChartAsJPEG(sa,expenses_Pie_Chart,500,500);
+					
+		
+					
+					%> --%>
+
+
+
+					<!--****************************  -->
+
+
+
+					<!-- ----------------- TABLE EXPENSES------------------ -->
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
+					<div class="row  ">
+
+						<div class="col-xl-8 col-lg-7   table_section ">
+							<div class="card shadow mb-4 secondary_table">
+
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
+									<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
+								</div>
+
+								<table class="table table-bordered table-striped  ">
+
+
+									<thead class="thead-light ">
+
+										<tr class="bg-light  sticky-top ">
+											<th class="hide" scope="col">ID</th>
+											<th scope="col">Purpose</th>
+											<th scope="col">Category</th>
+											<th scope="col">Sum</th>
+											<th scope="col">Date</th>
+											<th scope="col">Actions</th>
+										</tr>
+
+									</thead>
+
+									<tbody>
+										<!-- -----------FOR LOOP 2 ------------ -->
+
+										<c:forEach var="temp" items="${ELIST}">
+
+											<tr>
+
+												<td class="hide"><c:out value="${temp.id} " /></td>
+
+												<td><c:out value="${temp.purpose}" /></td>
+
+												<td><c:out value="${temp.category}" /></td>
+
+												<td><c:out value="${temp.sum}" /></td>
+
+												<td><c:out value="${temp.dfec}" /></td>
+
+												<td><a href="edit?id=<c:out value='${temp.id}' />"
+													class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+													href="delete?id=<c:out value='${temp.id}' />"
+													class="btn-delete">Delete</a></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+
+
+								</table>
+							</div>
+						</div>
+						
+
+						<!------------ FORM------------->
+						<div class="col-xl-4 col-lg-5  table_section">
+							<div class="card shadow mb-4">
+
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-primary">form
+										Expenses</h6>
+								</div>
+
+
+								<div class="card-body">
+
+									<form class="needs-validation" action="insert" method="get">
+
+										<c:if test="${EX1 != null}">
+											<input type="hidden" name="id"
+												value="<c:out value='${EX1.id}' />" />
+										</c:if>
+
+										<div class="form-group ">
+
+											<label for="pwd">Purpose</label> <input type="text"
+												id="validationServer01" name="purpose" size="45"
+												class="form-control is-valid " class="form-control is-valid"
+												required id="amount"
+												value="<c:out value='${EX1.purpose}' />" />
+										</div>
+
+										<div class="form-group">
+
+											<label for="pwd">Sum</label> <input type="text" name="sum"
+												id="validationServer01" class="form-control is-valid"
+												required id="amount" size="5"
+												value="<c:out value='${EX1.sum}' />" />
+										</div>
+
+										<div class="form-group d-flex align-items-center rounded">
+											<label class="p-2 m-1 text-muted rounded shadow is-valid">Date</label>
+											<input type="date" name="date" max="3000-12-31"
+												min="1000-01-01" class="form-control shadow"
+												id="validationServer01" required>
+										</div>
+								</div>
+
+								<!--------- RADIO BUTTONS ------  -->
+
+								<div
+									class="d-flex justify-space-around  align-items-center container ">
+
+									<div class="form-check mr-4 text-center">
+										<label class="form-check-label"> <input type="radio"
+											id="validationServer01" class="form-check-input is-valid"
+											required name="dish" value="transport">Transport
+										</label>
+									</div>
+
+									<div class="form-check mr-4">
+										<label class="form-check-label"> <input type="radio"
+											id="validationServer01" class="form-check-input is-valid"
+											required name="dish" value="home"> Home
+										</label>
+									</div>
+
+									<div class="form-check mr-4">
+										<label class="form-check-label"> <input type="radio"
+											id="validationServer01" class="form-check-input is-valid"
+											required name="dish" value="Travel"> Travel
+										</label>
+									</div>
+
+								</div>
+								<button type="submit" class="btn btn-success btn-block mt-4 "
+									value="Submit">Submit</button>
+
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+		
+				<!--******** END FORM******  -->
+
+
+
 				<!---------- MAP--------->
 				<div class="row ">
 
@@ -489,7 +600,7 @@
 				</div>
 				<!--******  END SOCIAL*****  -->
 
-				
+
 				<!-------UCAS BAR FINANCE  FINANCIAL  SUPPORT------->
 				<div class="row  ">
 
@@ -510,7 +621,7 @@
 						<div class=" bg-warning p-4 m-2 shadow rounded">
 							<a class="text-light"
 								href="http://www.bbk.ac.uk/student-services/financial-support">BIRKBECK
-								FINANCIAL  SUPPORT</a>
+								FINANCIAL SUPPORT</a>
 						</div>
 					</div>
 				</div>
@@ -519,8 +630,8 @@
 
 			</div>
 		</div>
-		</div>
-	
+	</div>
+
 	<!-------- FOOTER ------ -->
 	<div class="text-muted   mt-1 shadow">
 
@@ -531,7 +642,7 @@
 	</div>
 
 
-<!--TOOGGLE JAVASCRIPT -->
+	<!--TOOGGLE JAVASCRIPT -->
 	<script>
 		function myFunction(x) {
 			x.classList.toggle("change");
@@ -575,7 +686,7 @@
 					<tr>
 
 						<td class="hide"><c:out value="${tempB.id}" /></td>
-						
+
 						<td><c:out value="${tempB.total} " /> £</td>
 						<td><c:out value="${tempB.dfecdep}" /></td>
 
@@ -583,9 +694,9 @@
 							class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
 							href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td> --%>
 					</tr>
-					
-					
-				
+
+
+
 				</c:forEach>
 			</tbody>
 
@@ -594,63 +705,76 @@
 	</div>
 </div>
 
-
-
-<div class="chart">
-	<div id="chartContainer"></div>
-
-</div>
-<%--         
-<%
+<%-- <%
 		Double  transportChartPie  =  (Double)pageContext.getAttribute("TransporTotal"); 
 		Double  homeChartPie  =  (Double)pageContext.getAttribute("HomeTotal"); 
 		Double  TravelChartPie  =  (Double)pageContext.getAttribute("TravelTotal"); 
-	
-		Gson gsonObj = new Gson();
-		Map<Object, Object> map = null;
-		List<Map<Object, Object>> list = new ArrayList<Map<Object, Object>>();
-		map = new HashMap<Object, Object>();
-		map.put("label", "Transport");
-		map.put("y", transportChartPie);
-		list.add(map);
-		
-		map = new HashMap<Object, Object>();
-		map.put("label", "Home");
-		map.put("y", homeChartPie);
-		list.add(map);
-		
-		map = new HashMap<Object, Object>();
-		map.put("label", "Travel");
-		map.put("y", TravelChartPie);
-		list.add(map);
-		
-	
-		String dataPoints = gsonObj.toJson(list);
-	%> 
-	
-	<script type="text/javascript">
-		window.onload = function() {
-			var chart = new CanvasJS.Chart("chartContainer", {
-				theme : "light2", // "light1", "dark1", "dark2"
-				exportEnabled : true,
-				animationEnabled : true,
-				title : {
-					text : "Expenses"
-				},
-				data : [ {
-					type : "pie",
-					toolTipContent : "<b>{label}</b>: {y}£",
-					indexLabelFontSize : 16,
-					indexLabel : "{label} - {y}£",
-					dataPoints :
-	<%out.print(dataPoints);%>
-		} ]
-			});
-			chart.render();
-		}
-	</script>
 
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> --%>
+	%>  --%>
+
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      /* var tr = '${TransporTotal}';
+
+      var hmr = '${HomeTotal}';
+      var trav = '${TravelTotal}'; */
+     <%--   var transp = '<%= transportChartPie %>'; --%>
+     var  trans= document.getElementById('transp');
+      
+      
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'category'],
+          ['Transport',    34],
+      
+          ['Home',  400  ],
+          ['Travel',23 ],
+         
+        ]);
+
+        var options = {
+          title: 'Personal Budget Web Application',
+          subtitle:',Expenses, 2020',
+        };
+        
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2020', 1000, 400, 200]
+          
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Personal Budget Web Application',
+            subtitle: ' Deposit 2020',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+
 </body>
 </html>
 
