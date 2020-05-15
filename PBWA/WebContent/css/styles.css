@@ -17,22 +17,25 @@ body {
 
 } */
 
+	.secondary_table .chart_dashboard_bar {
+		width: 600px;
+		height: 650px;
+
+	} 
 
 /* -------------------------  //  ---------------- */
 .welcome_tittle {
 	font-family: 'Orbitron', sans-serif;
 	letter-spacing: .4rem;
 }
-.welcome_tittle h1{
-	
+
+.welcome_tittle h1 {
 	font-size: 14px;
 }
-
 
 .alert_login {
 	background-color: #ffffff;
 }
-
 
 /*-------bar SIDE------- */
 .logo {
@@ -219,18 +222,29 @@ canvas {
 }
 
 /* ------- ABOUT US --------------- */
-
-
 .hidden_property {
 	display: none;
 }
 /* -------  MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
 	
-	/*------ ABOUT US QUERIES ------  */
-
-
 	
+	/* ------ BAR CHART  ------  */
+	.secondary_table .chart_dashboard_bar {
+		width: 300px;
+		height: 350px;
+
+	} 
+	
+	
+	 table tbody{
+	width: auto;
+	background-color: blue;
+	font-size:30px;
+	
+	}
+
+	/*------ ABOUT US QUERIES ------  */
 	.das_t {
 		font-family: 'Orbitron', sans-serif;
 		letter-spacing: .3rem;
@@ -238,9 +252,6 @@ canvas {
 	}
 
 	/**********************/
-	
-	
-	
 
 	/* ----- LOGOUT BUTTON ------- */
 	.containerFluidLogout {
