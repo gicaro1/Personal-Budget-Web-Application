@@ -26,6 +26,9 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:400,700,800i&display=swap"
 	rel="stylesheet">
+<!--  ----------ANIMATE-CDN ----------- -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 <!-- Font awesome -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -54,13 +57,13 @@
 
 
 				<div class="col-12-sm  col-3-sm py-1 d-inline-flex logo_col">
-					<img src="img/household-budget-logo.png" class="logo mt-3 " alt="">
+					<img src="img/household-budget-logo.png"
+						class="logo mt-3 animated  flip delay-2s " alt="">
 					<h6 class="text-light  d-flex   pbwa_tittle ">PBWA</h6>
 
 				</div>
 
 				<hr class="hr_line bg-light">
-
 
 				<h6 class="das_t">Dashboard</h6>
 
@@ -69,7 +72,7 @@
 
 				<div class="col-12 interface">
 					<div>
-						<h6 class="features_tittle">Features</h6>
+						<h6 class="features_tittle animated  fadeInLeft delay-2s">Features</h6>
 						<a class="text-light" href="#"><i
 							class="fa fa-folder p-2 ml-3 h6 "></i>Util</a><br>
 						<hr class="hr_line bg-light">
@@ -78,17 +81,17 @@
 					</div>
 
 					<!-- ------ SIDE LEFT  BAR  -->
-					<h6 class="features_tittle">Interface</h6>
+					<h6 class="features_tittle animated  fadeInLeft delay-3s">Interface</h6>
 					<a class="text-light" href="deposit.jsp"><i
 						class="fa fa-wrench p-2 ml-3 h6"></i>Dep</a><br>
 					<hr class="hr_line bg-light">
 
-					<h6 class="features_tittle">Features</h6>
+					<h6 class="features_tittle animated  fadeInLeft delay-4s">Features</h6>
 					<a class="text-light" href="about.jsp"><i
 						class="fa fa-folder p-2 ml-3 h6 "></i>About US</a><br>
 					<hr class="hr_line bg-light">
 
-					<h6 class="features_tittle">Recomendations</h6>
+					<h6 class="features_tittle animated  fadeInLeft delay-5s">Recomendations</h6>
 					<a class="text-light " href="tips.jsp"><i
 						class="fa fa-table p-2 ml-3 h6  "></i>Tips</a>
 				</div>
@@ -110,14 +113,16 @@
 						</div>
 
 						<div class="col-xs-2   p-3 w-40  d-flex  ">
-							<a href="#"><i class="fa fa-envelope  p-2"></i></a> <a href="#"><i
+							<a href="mailto:someone@example.com"><i
+								class="fa fa-envelope  p-2"></i></a> <a href="#"><i
 								class="fa fa-bell  p-2"></i></a>
+
 
 						</div>
 
 						<div class="col-xs-4  d-flex profile_img_wrapper  text-center">
 
-							<img class="profile_pic " src="img/profile2.jpeg" alt="">
+							<img class="profile_pic  " src="img/profile2.jpeg" alt="">
 							<p class="d-flex  profile_name ">
 								<c:out value="${USER_SESSION}" />
 							</p>
@@ -169,6 +174,7 @@
 				<c:forEach var="tempB" items="${ELISTBAL}">
 					<c:set var="total" value="${total + tempB.total}" />
 
+
 				</c:forEach>
 				<!--**********  -->
 
@@ -179,7 +185,8 @@
 					class=" justify-content-between container-fluid containerFluidLogout ">
 
 					<div class="Dashboard_tittle_container text-center">
-						<h1 class="text-right pt-3 Dashboard_tittle text-center">Dashboard</h1>
+						<h1
+							class="text-right pt-3 Dashboard_tittle text-center animated  fadeInRight delay-5s">Dashboard</h1>
 					</div>
 
 					<div class="text-center ">
@@ -301,7 +308,7 @@
 
 
 					<!-- BAR CHART -->
-					<div class="col-xl-8 col-lg-7   table_section ">
+					<div class=" col-12 col-xl-8 col-lg-7  col-md-12  table_section  ">
 						<div class="card shadow mb-4 secondary_table">
 
 							<div
@@ -309,15 +316,13 @@
 								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
 							</div>
 
-							<table class="  ">
-
-
-
+							<table class=" chart ">
 
 								<div>
 
-									<div class="p-4" id="columnchart_material"
-										style="width: 700px; height: 350px;"></div>
+									<div class="p-2 chart_dashboard_bar " id="columnchart_material"
+										style="width: 650px; height: 350px;"></div>
+									<!-- style="width: 700px; height: 400px;" -->
 								</div>
 
 
@@ -343,208 +348,261 @@
 							</div>
 						</div>
 					</div>
-</div>
-					
+				</div>
 
 
-					<!-- <div id="piechart" style="width: 450px; height: 400px;"></div> -->
-					<!-- <div id="barchart_material" style="width: 440px; height: 300px;"></div> -->
-
-					<%-- 		
-					
-					<%
-			
-					DefaultPieDataset data = new  DefaultPieDataset();
-					data.setValue("Enero",5000);
-					data.setValue("Febrero",200);
-					data.setValue("Marzo",5000);
-					data.setValue("Abril",5000);
-					
-					/*  ---------generate graph ------ */
-					JFreeChart  expenses_Pie_Chart = ChartFactory.createPieChart("Expenses",data,true,true,true      );
-					
-					/*----- where the graph gonna be shown ----- */
-					
-					response.setContentType("image/JPEG");
-					OutputStream sa=response.getOutputStream();
-					
-					/* ---- print graph---- */
-					ChartUtilities.writeChartAsJPEG(sa,expenses_Pie_Chart,500,500);
-					
-		
-					
-					%> --%>
+				<!-- ----------------- TABLE EXPENSES------------------ -->
 
 
 
-					<!--****************************  -->
+				<div class="row  ">
+
+					<div class="col-xl-8 col-lg-7   table_section ">
+						<div class="card shadow mb-4 secondary_table">
+
+							<div
+								class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
+								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
+							</div>
+
+							<table class="table table-bordered table-striped  ">
 
 
+								<thead class="thead-light ">
 
-					<!-- ----------------- TABLE EXPENSES------------------ -->
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+									<tr class="bg-light  sticky-top ">
+										<th class="hide" scope="col">ID</th>
+										<th scope="col">Purpose</th>
+										<th scope="col">Category</th>
+										<th scope="col">Sum</th>
+										<th scope="col">Date</th>
+										<th scope="col">Actions</th>
+									</tr>
 
-					<div class="row  ">
+								</thead>
 
-						<div class="col-xl-8 col-lg-7   table_section ">
-							<div class="card shadow mb-4 secondary_table">
+								<tbody>
+									<!-- -----------FOR LOOP 2 ------------ -->
 
-								<div
-									class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
-									<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
-								</div>
+									<c:forEach var="temp" items="${ELIST}">
 
-								<table class="table table-bordered table-striped  ">
+										<tr>
 
+											<td class="hide"><c:out value="${temp.id} " /></td>
 
-									<thead class="thead-light ">
+											<td><c:out value="${temp.purpose}" /></td>
 
-										<tr class="bg-light  sticky-top ">
-											<th class="hide" scope="col">ID</th>
-											<th scope="col">Purpose</th>
-											<th scope="col">Category</th>
-											<th scope="col">Sum</th>
-											<th scope="col">Date</th>
-											<th scope="col">Actions</th>
+											<td><c:out value="${temp.category}" /></td>
+
+											<td><c:out value="${temp.sum}" /></td>
+
+											<td><c:out value="${temp.dfec}" /></td>
+
+											<td><a href="edit?id=<c:out value='${temp.id}' />"
+												class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+												href="delete?id=<c:out value='${temp.id}' />"
+												class="btn-delete">Delete</a></td>
 										</tr>
-
-									</thead>
-
-									<tbody>
-										<!-- -----------FOR LOOP 2 ------------ -->
-
-										<c:forEach var="temp" items="${ELIST}">
-
-											<tr>
-
-												<td class="hide"><c:out value="${temp.id} " /></td>
-
-												<td><c:out value="${temp.purpose}" /></td>
-
-												<td><c:out value="${temp.category}" /></td>
-
-												<td><c:out value="${temp.sum}" /></td>
-
-												<td><c:out value="${temp.dfec}" /></td>
-
-												<td><a href="edit?id=<c:out value='${temp.id}' />"
-													class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-													href="delete?id=<c:out value='${temp.id}' />"
-													class="btn-delete">Delete</a></td>
-											</tr>
-										</c:forEach>
-									</tbody>
+									</c:forEach>
+								</tbody>
 
 
-								</table>
-							</div>
+							</table>
 						</div>
-						
-
-						<!------------ FORM------------->
-						<div class="col-xl-4 col-lg-5  table_section">
-							<div class="card shadow mb-4">
-
-								<div
-									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">form
-										Expenses</h6>
-								</div>
+					</div>
 
 
-								<div class="card-body">
+					<!------------ FORM------------->
+					<div class="col-xl-4 col-lg-5  table_section">
+						<div class="card shadow mb-4">
 
-									<form class="needs-validation" action="insert" method="get">
+							<div
+								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+								<h6 class="m-0 font-weight-bold text-primary">form Expenses</h6>
+							</div>
 
-										<c:if test="${EX1 != null}">
-											<input type="hidden" name="id"
-												value="<c:out value='${EX1.id}' />" />
-										</c:if>
 
-										<div class="form-group ">
+							<div class="card-body">
 
-											<label for="pwd">Purpose</label> <input type="text"
-												id="validationServer01" name="purpose" size="45"
-												class="form-control is-valid " class="form-control is-valid"
-												required id="amount"
-												value="<c:out value='${EX1.purpose}' />" />
-										</div>
+								<form class="needs-validation" action="insert" method="get">
 
-										<div class="form-group">
+									<c:if test="${EX1 != null}">
+										<input type="hidden" name="id"
+											value="<c:out value='${EX1.id}' />" />
+									</c:if>
 
-											<label for="pwd">Sum</label> <input type="text" name="sum"
-												id="validationServer01" class="form-control is-valid"
-												required id="amount" size="5"
-												value="<c:out value='${EX1.sum}' />" />
-										</div>
+									<div class="form-group ">
 
-										<div class="form-group d-flex align-items-center rounded">
-											<label class="p-2 m-1 text-muted rounded shadow is-valid">Date</label>
-											<input type="date" name="date" max="3000-12-31"
-												min="1000-01-01" class="form-control shadow"
-												id="validationServer01" required>
-										</div>
-								</div>
-
-								<!--------- RADIO BUTTONS ------  -->
-
-								<div
-									class="d-flex justify-space-around  align-items-center container ">
-
-									<div class="form-check mr-4 text-center">
-										<label class="form-check-label"> <input type="radio"
-											id="validationServer01" class="form-check-input is-valid"
-											required name="dish" value="transport">Transport
-										</label>
+										<label for="pwd">Purpose</label> <input type="text"
+											id="validationServer01" name="purpose" size="45"
+											class="form-control is-valid " class="form-control is-valid"
+											required id="amount" value="<c:out value='${EX1.purpose}' />" />
 									</div>
 
-									<div class="form-check mr-4">
-										<label class="form-check-label"> <input type="radio"
-											id="validationServer01" class="form-check-input is-valid"
-											required name="dish" value="home"> Home
-										</label>
+									<div class="form-group">
+
+										<label for="pwd">Sum</label> <input type="text" name="sum"
+											id="validationServer01" class="form-control is-valid"
+											required id="amount" size="5"
+											value="<c:out value='${EX1.sum}' />" />
 									</div>
 
-									<div class="form-check mr-4">
-										<label class="form-check-label"> <input type="radio"
-											id="validationServer01" class="form-check-input is-valid"
-											required name="dish" value="Travel"> Travel
-										</label>
+									<div class="form-group d-flex align-items-center rounded">
+										<label class="p-2 m-1 text-muted rounded shadow is-valid">Date</label>
+										<input type="date" name="date" max="3000-12-31"
+											min="1000-01-01" class="form-control shadow"
+											id="validationServer01" required>
 									</div>
+							</div>
 
+							<!--------- RADIO BUTTONS ------  -->
+
+							<div
+								class="d-flex justify-space-around  align-items-center container ">
+
+								<div class="form-check mr-4 text-center">
+									<label class="form-check-label"> <input type="radio"
+										id="validationServer01" class="form-check-input is-valid"
+										required name="dish" value="transport">Transport
+									</label>
 								</div>
-								<button type="submit" class="btn btn-success btn-block mt-4 "
-									value="Submit">Submit</button>
 
-								</form>
+								<div class="form-check mr-4">
+									<label class="form-check-label"> <input type="radio"
+										id="validationServer01" class="form-check-input is-valid"
+										required name="dish" value="home"> Home
+									</label>
+								</div>
+
+								<div class="form-check mr-4">
+									<label class="form-check-label"> <input type="radio"
+										id="validationServer01" class="form-check-input is-valid"
+										required name="dish" value="Travel"> Travel
+									</label>
+								</div>
 
 							</div>
+							<button type="submit" class="btn btn-success btn-block mt-4 "
+								value="Submit">Submit</button>
+
+							</form>
+
 						</div>
 					</div>
 				</div>
-		
+
+
+
+
 				<!--******** END FORM******  -->
+
+				<!--------- BARS ---------  -->
+
+
+
+				<div class="  container my-3 shadow p-3">
+
+					<div class="card-header py-3 mb-3 shadow">
+						<h6 class="m-0 font-weight-bold text-primary">Bar Expenses</h6>
+					</div>
+
+
+
+					<div class="progress mb-2 ">
+						<div
+							class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+							role="progressbar" aria-valuenow="75" aria-valuemin="0"
+							aria-valuemax="100" style="width: 22%">Transport:
+							<c:out value="${TransporTotal/100}" />
+							%</div>
+					</div>
+					
+					
+					
+						<div class="progress mb-2 ">
+						<div
+							class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+							role="progressbar" aria-valuenow="75" aria-valuemin="0"
+							aria-valuemax="100" style="width: 34%">	Travel:
+							<c:out value="${TravelTotal/100}" />
+							%</div>
+					</div>
+					
+					
+					
+					
+					
+						<div class="progress mb-2 ">
+						<div
+							class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+							role="progressbar" aria-valuenow="75" aria-valuemin="0"
+							aria-valuemax="100" style="width: 46%">	Home:
+							<c:out value="${HomeTotal/100}" />
+							%</div>
+					</div>
+
+						<div class="progress mb-2 ">
+						<div
+							class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+							role="progressbar" aria-valuenow="75" aria-valuemin="0"
+							aria-valuemax="100" style="width: 85%">	Total:
+							<c:out value="${total/1000}" />
+							%</div>
+					</div>
+
+
+				</div>
+
+				<!--------DEPOSIT TABLE  -->
+				<!-- 	<div
+					class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
+					<h6 class="m-0 font-weight-bold text-primary ">Deposit Table</h6>
+				</div> -->
+				<div class=" text-muted d-flex ">
+					<h6
+						class="  col-5 ml-0  font-weight-bold  text-center text-primary ">Deposit</h6>
+					<h6 class=" col-7  font-weight-bold  text-center text-primary ">Date</h6>
+				</div>
+
+
+
+
+
+				<div class=" col-xl-12 col-lg-12 table_section text-center ">
+					<div class=" row shadow mb-4    secondary_table_deposit ">
+
+
+
+						<table class="table table-bordered table-striped  ">
+
+
+
+							<tbody>
+								<c:forEach var="tempB" items="${ELISTBAL}">
+
+									<tr>
+
+										<td class="hide"><c:out value="${tempB.id}" /></td>
+
+
+										<td>£<c:out value="${tempB.total} " />
+										</td>
+										<td><c:out value="${tempB.dfecdep}" /></td>
+
+										<%-- <td><a href="edit?id=<c:out value='${temp.id}' />"
+							class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+							href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td> --%>
+									</tr>
+
+
+
+								</c:forEach>
+							</tbody>
+
+
+						</table>
+					</div>
+				</div>
 
 
 
@@ -633,9 +691,9 @@
 	</div>
 
 	<!-------- FOOTER ------ -->
-	<div class="text-muted   mt-1 shadow">
+	<div class="text-muted  bg-dark  mt-1 shadow">
 
-		<div class="footer-copyright text-center  text-muted py-3">
+		<div class="footer-copyright text-center   py-3">
 			© 2020 Copyright: <a class="text-muted"
 				href="https://mdbootstrap.com/"> PBWA</a>
 		</div>
@@ -657,122 +715,80 @@
 </body>
 
 
-<!-------------  TABLE DEPOSIT  -------- -->
-
-<div class="col-xl-8 col-lg-7   table_section ">
-	<div class="card shadow mb-4 secondary_table">
-
-		<div
-			class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
-			<h6 class="m-0 font-weight-bold text-primary ">Deposit Table</h6>
-		</div>
-
-		<table class="table table-bordered table-striped  ">
-
-
-			<thead class="thead-light ">
-
-				<tr class="bg-light  sticky-top ">
-					<th class="hide" scope="col">ID</th>
-					<th scope="col">Deposit</th>
-					<th scope="col">Date</th>
-				</tr>
-
-			</thead>
-
-			<tbody>
-				<c:forEach var="tempB" items="${ELISTBAL}">
-
-					<tr>
-
-						<td class="hide"><c:out value="${tempB.id}" /></td>
-
-						<td><c:out value="${tempB.total} " /> £</td>
-						<td><c:out value="${tempB.dfecdep}" /></td>
-
-						<%-- <td><a href="edit?id=<c:out value='${temp.id}' />"
-							class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
-							href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td> --%>
-					</tr>
-
-
-
-				</c:forEach>
-			</tbody>
-
-
-		</table>
-	</div>
-</div>
-
-<%-- <%
-		Double  transportChartPie  =  (Double)pageContext.getAttribute("TransporTotal"); 
-		Double  homeChartPie  =  (Double)pageContext.getAttribute("HomeTotal"); 
-		Double  TravelChartPie  =  (Double)pageContext.getAttribute("TravelTotal"); 
-
-	%>  --%>
 
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      
-      /* var tr = '${TransporTotal}';
+	google.charts.load('current', {
+		'packages' : [ 'corechart' ]
+	});
+	google.charts.setOnLoadCallback(drawChart);
 
-      var hmr = '${HomeTotal}';
-      var trav = '${TravelTotal}'; */
-     <%--   var transp = '<%= transportChartPie %>'; --%>
-     var  trans= document.getElementById('transp');
-      
-      
-      function drawChart() {
+	var trans = document.getElementById('transp');
 
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'category'],
-          ['Transport',    34],
-      
-          ['Home',  400  ],
-          ['Travel',23 ],
-         
-        ]);
+	function drawChart() {
 
-        var options = {
-          title: 'Personal Budget Web Application',
-          subtitle:',Expenses, 2020',
-        };
-        
+		var data = google.visualization.arrayToDataTable([
+				[ 'Task', 'category' ],
+				[ 'Transport', <c:out value="${TransporTotal}" /> ],
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+				[ 'Home', <c:out value="${HomeTotal}" /> ],
+				[ 'Travel', <c:out value="${TravelTotal}" /> ],
 
-        chart.draw(data, options);
-      }
-    </script>
+		]);
+
+		var options = {
+			title : 'Personal Budget Web Application',
+			subtitle : ',Expenses, 2020',
+		};
+
+		var chart = new google.visualization.PieChart(document
+				.getElementById('piechart'));
+
+		chart.draw(data, options);
+	}
+</script>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
+	google.charts.load('current', {
+		'packages' : [ 'bar' ]
+	});
+	google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2020', 1000, 400, 200]
-          
-        ]);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+				[ 'Year', 'Transport', 'Home', 'Travel' ],
+				[ '2020', <c:out value="${TransporTotal}" />,
+						<c:out value="${HomeTotal}" />,
+						<c:out value="${TravelTotal}" /> ]
 
-        var options = {
-          chart: {
-            title: 'Personal Budget Web Application',
-            subtitle: ' Deposit 2020',
-          }
-        };
+		]);
 
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+		var options = {
+			chart : {
+				title : 'Personal Budget Web Application',
+				subtitle : ' Deposit Bar Chart',
+			}
+		};
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
+		var chart = new google.charts.Bar(document
+				.getElementById('columnchart_material'));
+
+		chart.draw(data, google.charts.Bar.convertOptions(options));
+	}
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 
 
 </body>

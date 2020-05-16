@@ -19,7 +19,7 @@ body {
 
 	.secondary_table .chart_dashboard_bar {
 		width: 600px;
-		height: 650px;
+		height: 350px;
 
 	} 
 
@@ -156,6 +156,12 @@ a {
 	overflow: scroll;
 }
 
+.secondary_table_deposit {
+	position: sticky;
+	height: 200px;
+	overflow: scroll;
+}
+
 .logout {
 	left: 0;
 }
@@ -230,17 +236,19 @@ canvas {
 	
 	
 	/* ------ BAR CHART  ------  */
-	.secondary_table .chart_dashboard_bar {
+/* 	.secondary_table .chart_dashboard_bar {
 		width: 300px;
 		height: 350px;
 
 	} 
-	
+	 */
 	
 	 table tbody{
 	width: auto;
-	background-color: blue;
-	font-size:30px;
+	padding: 5px;
+	justify-content: space-around;
+
+	font-size:14px;
 	
 	}
 
@@ -303,6 +311,11 @@ canvas {
 	}
 	.balance_section, table_section {
 		height: 80vh;
+	}
+.dopisit_table table {
+	background-color: green;
+	
+	
 	}
 	.row .table_section .card {
 		height: auto;
