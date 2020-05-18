@@ -72,24 +72,24 @@
 
 				<div class="col-12 interface">
 					<div>
-						<h6 class="features_tittle animated  fadeInLeft delay-2s">Features</h6>
-						<a class="text-light" href="#"><i
-							class="fa fa-folder p-2 ml-3 h6 "></i>Util</a><br>
+						<h6 class="features_tittle animated  fadeInLeft delay-2s">Government</h6>
+						<a class="text-light" href="incomeGov.jsp"><i
+							class="fa fa-folder p-2 ml-3 h6 "></i>GOV</a><br>
 						<hr class="hr_line bg-light">
 
 
 					</div>
 
 					<!-- ------ SIDE LEFT  BAR  -->
-					<h6 class="features_tittle animated  fadeInLeft delay-3s">Interface</h6>
+					<h6 class="features_tittle animated  fadeInLeft delay-3s">Cash</h6>
 					<a class="text-light" href="deposit.jsp"><i
 						class="fa fa-wrench p-2 ml-3 h6"></i>Dep</a><br>
 					<hr class="hr_line bg-light">
 
-					<h6 class="features_tittle animated  fadeInLeft delay-4s">Features</h6>
+					<!-- <h6 class="features_tittle animated  fadeInLeft delay-4s">Features</h6>
 					<a class="text-light" href="about.jsp"><i
 						class="fa fa-folder p-2 ml-3 h6 "></i>About US</a><br>
-					<hr class="hr_line bg-light">
+					<hr class="hr_line bg-light"> -->
 
 					<h6 class="features_tittle animated  fadeInLeft delay-5s">Recomendations</h6>
 					<a class="text-light " href="tips.jsp"><i

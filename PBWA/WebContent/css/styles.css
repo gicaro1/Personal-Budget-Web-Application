@@ -22,6 +22,11 @@ body {
 		height: 350px;
 
 	} 
+	/*about  */
+	.welcome_tittle h1{
+
+    font-size: 12px;
+}
 
 /* -------------------------  //  ---------------- */
 .welcome_tittle {
