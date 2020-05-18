@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    
 
         <meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
         
@@ -33,7 +34,10 @@
         <title>income seccion</title>
         </head>
 <body >
-  <div class="container ">
+
+
+
+  <div class="container pt-5 ">
     <div class="jumbotron  container text-light bg-success  col-md-8 col-lg-8 col-xl-5 shadow mt-2 ">
         <h1 class="display-5 text-center  text-center animated   fadeInDown delay-2s">Student Income</h1>
         <p class="lead text-center  animated   flip delay-2s ">Manage Government incomes!</p>
@@ -41,7 +45,7 @@
      </div>
 
 
-     <div class=" card container col-md-8 col-lg-8 col-xl-5 p-2 ">
+     <div class=" card container col-md-8 col-lg-8 col-xl-5 p-2 shadow">
 
     
       <form class="needs-validation  " action="insertLoan" method="get">
