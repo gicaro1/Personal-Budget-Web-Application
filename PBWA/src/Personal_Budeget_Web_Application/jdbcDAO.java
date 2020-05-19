@@ -132,6 +132,39 @@ public class jdbcDAO {
 
 		return list3;
 	}
+	public List<LoanGOv> listLoansGov() throws SQLException {
+
+		List<LoanGOv> list4 = new ArrayList<>();
+
+		String sql = "SELECT * FROM Loans";
+
+		connect();
+
+		Statement statement = jdbcConnection.createStatement();
+		ResultSet resultSet = statement.executeQuery(sql);
+
+		while (resultSet.next()) {
+
+			int id = resultSet.getInt("id");
+			String institutions = resultSet.getString("INSTITUTIONS");
+			String courses = resultSet.getString("COURSES");
+			int  amount = resultSet.getInt("AMOUNT");
+		
+
+			LoanGOv ExpDep = new LoanGOv(id,institutions, courses,  amount);
+			
+			list4.add(ExpDep);
+		}
+
+		resultSet.close();
+		statement.close();
+
+		disconnect();
+
+		return list4;
+	}
+	
+	
 //	 <------------------------INSERT METHOD LIST -------------------->//
 
 	public boolean insertExp(ProductExpense newExp) throws SQLException {
@@ -171,6 +204,28 @@ public class jdbcDAO {
 	
 	
 	}
+//	 <------------------------INSERT GOVERNMENT LOAN-------------------->//
+	
+	public boolean insertLoanGov(LoanGOv incomeGovernment) throws SQLException{
+		
+		String sql = "INSERT INTO  Loans (INSTITUTIONS, COURSES, AMOUNT) VALUES ( ?, ?,?)";
+		connect();
+
+		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+
+		
+		statement.setString(1, incomeGovernment.getInstitutions());
+		statement.setString(2, incomeGovernment.getPartFullTime());
+		statement.setInt(3, incomeGovernment.getGovFigures());
+
+		boolean rowInserted = statement.executeUpdate() > 0;
+		statement.close();
+		disconnect();
+	
+		return rowInserted;
+		
+		
+	}
 
 	public boolean deleteDao(ProductExpense newExp) throws SQLException {
 		String sql = "DELETE FROM Expense where Id = ?";
@@ -187,32 +242,7 @@ public class jdbcDAO {
 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 	public ProductExpense getUnique(int id) throws SQLException {
 
@@ -245,50 +275,6 @@ public class jdbcDAO {
 
 	}
 	
-	
-//	
-//	
-////
-//	public Double SumAllDeposit(List<BalanceT> list2) {
-//		
-//		
-//		double total = 0;
-//		
-//		
-//		for( BalanceT temp: list2 ) {
-//			
-//			
-//			
-//			
-//			Double sum = Double.parseDouble(temp.toString());
-//			
-//			
-//			
-//			total += sum;
-//			System.out.println(total);
-//			
-//		}
-//	
-//		return total;
-//	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 
 	public boolean updateExpense(BalanceT Uexp) throws SQLException {
 
@@ -310,6 +296,8 @@ public class jdbcDAO {
 
 		return rowUpdated;
 	}
+
+
 
 
 

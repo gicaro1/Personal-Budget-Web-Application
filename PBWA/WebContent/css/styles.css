@@ -18,7 +18,7 @@ body {
 } */
 
 	.secondary_table .chart_dashboard_bar {
-		width: 600px;
+	/* 	width: 600px; */
 		height: 350px;
 
 	} 
@@ -156,12 +156,14 @@ a {
 }
 
 .secondary_table {
+	width: auto;
 	position: sticky;
-	height: 420px;
+
 	overflow: scroll;
 }
 
 .secondary_table_deposit {
+
 	position: sticky;
 	height: 200px;
 	overflow: scroll;
@@ -234,11 +236,15 @@ canvas {
 
 /* ------- ABOUT US --------------- */
 .hidden_property {
+	
 	display: none;
 }
 /* -------  MEDIA QUERIES */
 @media only screen and (max-width: 600px) {
-	
+	/*  table  tbody  tr  td .date_record_table{
+
+	background-color: blue;
+	} */
 	
 	/* ------ BAR CHART  ------  */
 /* 	.secondary_table .chart_dashboard_bar {
@@ -312,7 +318,7 @@ canvas {
 		border: 1px solid #080808
 	}
 	iframe {
-		height: 100%;
+		height: auto;
 	}
 	.balance_section, table_section {
 		height: 80vh;

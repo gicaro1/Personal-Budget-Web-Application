@@ -177,6 +177,12 @@
 
 				</c:forEach>
 				<!--**********  -->
+				<!--------- FOR EACH LOOP FOR INCOME TABLE ----------  -->
+				<c:forEach var="tempC" items="${ELISTGOV}">
+					<c:set var="total" value="${total + tempC.govFigures}" />
+				
+				</c:forEach>
+				<!--**********  -->
 
 
 				<!-----------------LOGOUT BUTTON-------------  -->
@@ -321,7 +327,7 @@
 								<div>
 
 									<div class="p-2 chart_dashboard_bar " id="columnchart_material"
-										style="width: 650px; height: 350px;"></div>
+										style="width: 550px; height: 350px;"></div>
 									<!-- style="width: 700px; height: 400px;" -->
 								</div>
 
@@ -340,7 +346,7 @@
 							</div>
 
 
-							<div class="card-body">
+							<div class="card-body d-flex justify-content-center ">
 								<div class="mb-4" id="piechart"
 									style="width: 330px; height: 300px;"></div>
 
@@ -357,15 +363,15 @@
 
 				<div class="row  ">
 
-					<div class="col-xl-8 col-lg-7   table_section ">
-						<div class="card shadow mb-4 secondary_table">
+					<div class=" col-12 col-sm-12  col-md-8 col-lg-7 col-xl-8  table_section ">
+						<div class="card shadow mb-4 secondary_table ">
 
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
 								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
 							</div>
 
-							<table class="table table-bordered table-striped  ">
+							<table class="table table-bordered table-striped ">
 
 
 								<thead class="thead-light ">
@@ -381,7 +387,7 @@
 
 								</thead>
 
-								<tbody>
+								<tbody class="p-4 ">
 									<!-- -----------FOR LOOP 2 ------------ -->
 
 									<c:forEach var="temp" items="${ELIST}">
@@ -396,7 +402,7 @@
 
 											<td><c:out value="${temp.sum}" /></td>
 
-											<td><c:out value="${temp.dfec}" /></td>
+											<td class="date_record_table"><c:out value="${temp.dfec}" /></td>
 
 											<td><a href="edit?id=<c:out value='${temp.id}' />"
 												class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
@@ -499,12 +505,12 @@
 				<!--------- BARS ---------  -->
 
 
-
-				<div class="  container my-3 shadow p-3">
-
-					<div class="card-header py-3 mb-3 shadow">
+					<div class="card-header    py-3">
 						<h6 class="m-0 font-weight-bold text-primary">Bar Expenses</h6>
 					</div>
+				<div class="  container  mb-3 shadow p-3 card-header">
+
+				
 
 
 
@@ -512,42 +518,50 @@
 						<div
 							class="progress-bar progress-bar-striped progress-bar-animated bg-success"
 							role="progressbar" aria-valuenow="75" aria-valuemin="0"
-							aria-valuemax="100" style="width: 22%">Transport:
+							aria-valuemax="100" style="width: 22%">
+							Transport:
 							<c:out value="${TransporTotal/100}" />
-							%</div>
+							%
+						</div>
 					</div>
-					
-					
-					
-						<div class="progress mb-2 ">
+
+
+
+					<div class="progress mb-2 ">
 						<div
 							class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
 							role="progressbar" aria-valuenow="75" aria-valuemin="0"
-							aria-valuemax="100" style="width: 34%">	Travel:
+							aria-valuemax="100" style="width: 34%">
+							Travel:
 							<c:out value="${TravelTotal/100}" />
-							%</div>
+							%
+						</div>
 					</div>
-					
-					
-					
-					
-					
-						<div class="progress mb-2 ">
+
+
+
+
+
+					<div class="progress mb-2 ">
 						<div
 							class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
 							role="progressbar" aria-valuenow="75" aria-valuemin="0"
-							aria-valuemax="100" style="width: 46%">	Home:
+							aria-valuemax="100" style="width: 46%">
+							Home:
 							<c:out value="${HomeTotal/100}" />
-							%</div>
+							%
+						</div>
 					</div>
 
-						<div class="progress mb-2 ">
+					<div class="progress mb-2 ">
 						<div
 							class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
 							role="progressbar" aria-valuenow="75" aria-valuemin="0"
-							aria-valuemax="100" style="width: 85%">	Total:
+							aria-valuemax="100" style="width: 85%">
+							Total:
 							<c:out value="${total/1000}" />
-							%</div>
+							%
+						</div>
 					</div>
 
 
@@ -558,7 +572,12 @@
 					class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
 					<h6 class="m-0 font-weight-bold text-primary ">Deposit Table</h6>
 				</div> -->
-				<div class=" text-muted d-flex ">
+				<div class=" card-header text-muted d-flex m-1 ">
+					<h6 class="  col-xl-12 font-weight-bold    text-left text-primary  ">Deposit
+						Table</h6>
+
+				</div>
+				<div class=" card-header text-muted d-flex  ">
 					<h6
 						class="  col-5 ml-0  font-weight-bold  text-center text-primary ">Deposit</h6>
 					<h6 class=" col-7  font-weight-bold  text-center text-primary ">Date</h6>
@@ -657,6 +676,57 @@
 
 				</div>
 				<!--******  END SOCIAL*****  -->
+
+				<!---------- INCOME GOV ----------  -->
+				
+				
+				<div class=" card-header text-muted d-flex m-1 ">
+					<h6 class="  col-12  col-md-6 col-xl-12  col-lg-12 font-weight-bold  text-left text-primary ">Government Grand Table</h6>
+
+				</div>
+				<div class=" card-header text-muted d-flex ">
+					<h6
+						class="  col-5 ml-0  font-weight-bold  text-center text-primary ">Loan</h6>
+					<h6 class=" col-4  font-weight-bold  text-center text-primary ">Date</h6>
+					<h6 class=" col-3  font-weight-bold  text-center text-primary ">Amount</h6>
+				</div>
+
+				<div class=" col-xl-12 col-lg-12  table_section text-center ">
+					<div class=" row shadow mb-4    secondary_table_deposit ">
+
+
+
+						<table class="table table-bordered table-striped  ">
+
+
+
+							<tbody>
+								<c:forEach var="tempC" items="${ELISTGOV}">
+
+									<tr>
+
+										<td class="hide"><c:out value="${tempC.id}" /></td>
+
+
+										<td><c:out value="${tempC.institutions} " /></td>
+										<td><c:out value="${tempC.partFullTime}" /></td>
+										<td>£ <c:out value="${tempC.govFigures}" /></td>
+
+										<%-- <td><a href="edit?id=<c:out value='${temp.id}' />"
+							class="btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+							href="delete?id=<c:out value='${temp.id}' />" class="btn-delete">Delete</a></td> --%>
+									</tr>
+
+
+
+								</c:forEach>
+							</tbody>
+
+
+						</table>
+					</div>
+				</div>
+
 
 
 				<!-------UCAS BAR FINANCE  FINANCIAL  SUPPORT------->

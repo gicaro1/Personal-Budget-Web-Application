@@ -30,18 +30,18 @@ public class controllerPBWA extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
-    
-        if (session != null) {
-            session.removeAttribute("username");
-        
-            session.invalidate();
-             
+		HttpSession session = request.getSession(false);
+
+		if (session != null) {
+			session.removeAttribute("username");
+
+			session.invalidate();
+
 //            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 //            dispatcher.forward(request, response);
-            response.sendRedirect("index.jsp");
-        }
-	
+			response.sendRedirect("index.jsp");
+		}
+
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,13 +50,13 @@ public class controllerPBWA extends HttpServlet {
 
 		try {
 			switch (action) {
-			
+
 			case "/login":
 				login(request, response);
 				break;
-//			case "/logout":
-//				logout(request, response);
-//				break;
+			case "/Loan":
+				insertLoan(request, response);
+				break;
 
 			case "/new":
 				showNewForm(request, response);
@@ -67,9 +67,8 @@ public class controllerPBWA extends HttpServlet {
 				break;
 			case "/insertDep":
 				insertDeposit(request, response);
-			
+
 				break;
-	
 
 			case "/delete":
 				deleteExpense(request, response);
@@ -78,19 +77,16 @@ public class controllerPBWA extends HttpServlet {
 			case "/edit":
 				showEditForm(request, response);
 				break;
-				
-		
 
 //			case "/update":
 //				updateExpense(request, response);
 //				
 //				break;
 			default:
-				
-			
+
 				listexpenses(request, response);
 //				listBalance(request, response) ;
-				
+
 //				DisplayBalance(request, response);
 
 			}
@@ -98,7 +94,21 @@ public class controllerPBWA extends HttpServlet {
 			throw new ServletException(ex);
 		}
 	}
+//	 <-----------INSERT GOV LOAN ---------------->
+private void insertLoan(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	String institutions = request.getParameter("institutions");
+	String courses = request.getParameter("courses");
+	int numbers = Integer.parseInt(request.getParameter("numbers"));
+	
 
+	LoanGOv incomeGovernment = new LoanGOv(institutions,courses,numbers);
+
+	Exp1.insertLoanGov(incomeGovernment);
+
+	response.sendRedirect("list");
+	
+		
+	}
 
 //	 <-----------LOGIN ---------------->
 	private void login(HttpServletRequest request, HttpServletResponse response)
@@ -112,47 +122,41 @@ public class controllerPBWA extends HttpServlet {
 
 		if (Exp1.validate(username, userpass)) {
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-			
-//			<-------------------SESSION -------------------------->
-			
-		request.getSession(true).setAttribute("USER_SESSION", username);
-	
-			
 
-				List<ProductExpense> list1 = Exp1.listAll();
-				request.setAttribute("ELIST", list1);
-				
-				List<BalanceT> list2 = Exp1.listBalance();
-				request.setAttribute("ELISTBAL", list2);
-				
+//			<-------------------SESSION -------------------------->
+
+			request.getSession(true).setAttribute("USER_SESSION", username);
+
+			List<ProductExpense> list1 = Exp1.listAll();
+			request.setAttribute("ELIST", list1);
+
+			List<BalanceT> list2 = Exp1.listBalance();
+			request.setAttribute("ELISTBAL", list2);
+
 //				response.sendRedirect("Dashboard.jsp");
-				
-				
-				RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
-				rd.forward(request, response);
+
+			RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
+			rd.forward(request, response);
 //				if(request.getSession(true) == null) {
 //					String username1 = (String) request.getSession().getAttribute("username");
 //					out.print("Welcome " + username1);
 //					out.print("<br/><a href=\"Logout\">Logout</a>");
 //				}
-			
 
-			} else {
-		
-				request.setAttribute("MESSAGE", "Sorry username or password error" );
-				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-				rd.include(request, response);
-			}
+		} else {
+
+			request.setAttribute("MESSAGE", "Sorry username or password error");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			rd.include(request, response);
+		}
 	}
 
 //	<------------------- ********************------------->
-	
-	
+
 //	<--------------------- lIST METHODS -------------------->
 
 	private void listexpenses(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
-		
 
 		List<ProductExpense> list1 = Exp1.listAll();
 		request.setAttribute("ELIST", list1);
@@ -160,20 +164,20 @@ public class controllerPBWA extends HttpServlet {
 		List<BalanceT> list2 = Exp1.listBalance();
 		request.setAttribute("ELISTBAL", list2);
 		
-		
+		List<LoanGOv> list4 = Exp1.listLoansGov();
+		request.setAttribute("ELISTGOV", list4);
+
 //		 RequestDispatcher rd;
 //         rd = getServletContext().getRequestDispatcher("/Dashboard.jsp");
 //         rd = getServletContext().getRequestDispatcher("/deposit.jsp");
 //         rd.forward(request, response);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
-		
+
 		dispatcher.forward(request, response);
 
 	}
-	
 
-	
 //
 //	private void listBalance(HttpServletRequest request, HttpServletResponse response)
 //			throws ServletException, IOException, SQLException {
@@ -189,9 +193,6 @@ public class controllerPBWA extends HttpServlet {
 //		dispatcher.forward(request, response);
 //
 //	}
-	
-	
-
 
 //	
 //
@@ -214,9 +215,6 @@ public class controllerPBWA extends HttpServlet {
 //		response.sendRedirect("list");
 //
 //	}
-	
-
-	
 
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
@@ -231,8 +229,6 @@ public class controllerPBWA extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
-	
-
 
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
