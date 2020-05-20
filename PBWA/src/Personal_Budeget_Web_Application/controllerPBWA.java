@@ -117,10 +117,12 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 //		PrintWriter out = response.getWriter();
 		String username = request.getParameter("username");
 		String userpass = request.getParameter("userpass");
+		
+	String passwordEncrypted = Encrysecuryty.encode(userpass);
 
 		response.setContentType("text/html");
 
-		if (Exp1.validate(username, userpass)) {
+		if (Exp1.validate(username, passwordEncrypted)) {
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 
 //			<-------------------SESSION -------------------------->
@@ -158,6 +160,8 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 	private void listexpenses(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 
+	
+
 		List<ProductExpense> list1 = Exp1.listAll();
 		request.setAttribute("ELIST", list1);
 
@@ -166,6 +170,7 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		
 		List<LoanGOv> list4 = Exp1.listLoansGov();
 		request.setAttribute("ELISTGOV", list4);
+		
 
 //		 RequestDispatcher rd;
 //         rd = getServletContext().getRequestDispatcher("/Dashboard.jsp");
@@ -177,6 +182,7 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		dispatcher.forward(request, response);
 
 	}
+	
 
 //
 //	private void listBalance(HttpServletRequest request, HttpServletResponse response)

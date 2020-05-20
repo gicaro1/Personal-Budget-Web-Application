@@ -41,7 +41,7 @@ public class jdbcDAO {
 	
 //	<----------------- METHOD VALIDATE----------------------->
 
-	public boolean validate(String username, String userpass)  throws SQLException {
+	public boolean validate(String username, String passwordEncrypted)  throws SQLException {
 		
 		boolean status=false;  
 
@@ -53,7 +53,7 @@ public class jdbcDAO {
 		
 
 		statement.setString(1,username );
-		statement.setString(2, userpass);
+		statement.setString(2, passwordEncrypted);
 
 		ResultSet resultSet = statement.executeQuery();
 

@@ -604,8 +604,7 @@
 										<td class="hide"><c:out value="${tempB.id}" /></td>
 
 
-										<td>£<c:out value="${tempB.total} " />
-										</td>
+										<td>£<c:out value="${tempB.total} " /></td>
 										<td><c:out value="${tempB.dfecdep}" /></td>
 
 										<%-- <td><a href="edit?id=<c:out value='${temp.id}' />"
@@ -704,8 +703,8 @@
 								<c:forEach var="tempC" items="${ELISTGOV}">
 
 									<tr>
-
-										<td class="hide"><c:out value="${tempC.id}" /></td>
+<%-- 
+										<td class="hide"><c:out value="${tempC.id}" /></td> --%>
 
 
 										<td><c:out value="${tempC.institutions} " /></td>
