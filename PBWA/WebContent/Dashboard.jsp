@@ -319,7 +319,7 @@
 
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between position-sticky">
-								<h6 class="m-0 font-weight-bold text-primary ">Records</h6>
+								<h6 class="m-0 font-weight-bold text-primary ">Bar Chart</h6>
 							</div>
 
 							<table class=" chart ">
@@ -342,7 +342,7 @@
 
 							<div
 								class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-								<h6 class="m-0 font-weight-bold text-primary">form Expenses</h6>
+								<h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
 							</div>
 
 
@@ -680,7 +680,7 @@
 				
 				
 				<div class=" card-header text-muted d-flex m-1 ">
-					<h6 class="  col-12  col-md-6 col-xl-12  col-lg-12 font-weight-bold  text-left text-primary ">Government Grand Table</h6>
+					<h6 class="  col-12  col-md-6 col-xl-12  col-lg-12 font-weight-bold  text-left text-primary ">Government  Scholarship Table</h6>
 
 				</div>
 				<div class=" card-header text-muted d-flex ">

@@ -54,6 +54,9 @@ public class controllerPBWA extends HttpServlet {
 			case "/login":
 				login(request, response);
 				break;
+			case "/register":
+				registerInsert(request, response);
+				break;
 			case "/Loan":
 				insertLoan(request, response);
 				break;
@@ -94,6 +97,8 @@ public class controllerPBWA extends HttpServlet {
 			throw new ServletException(ex);
 		}
 	}
+
+
 //	 <-----------INSERT GOV LOAN ---------------->
 private void insertLoan(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 	String institutions = request.getParameter("institutions");
@@ -118,11 +123,11 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		String username = request.getParameter("username");
 		String userpass = request.getParameter("userpass");
 		
-	String passwordEncrypted = Encrysecuryty.encode(userpass);
+
 
 		response.setContentType("text/html");
 
-		if (Exp1.validate(username, passwordEncrypted)) {
+		if (Exp1.validate(username, userpass)) {
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 
 //			<-------------------SESSION -------------------------->
@@ -258,6 +263,45 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 
 		response.sendRedirect("list");
 
+	}
+	
+	// <------------------INSERT REGISTER-------------------> //
+	private void registerInsert(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
+		String username = request.getParameter("username");
+		String userpass = request.getParameter("userpass");
+		String Surname = request.getParameter("surname");
+		String email = request.getParameter("email");
+		
+		String password = Encrysecuryty.encode(userpass);
+	
+
+		RegisterModel regist = new RegisterModel(username, password, Surname,email);
+
+		Exp1.insertDAOregister(regist);
+
+		response.sendRedirect("list");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	// <------------------INSERT METHOD Deposit Page-------------------> //

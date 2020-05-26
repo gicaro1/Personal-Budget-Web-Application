@@ -57,20 +57,29 @@
                             
 						<!---------FORM REGISTER-------  -->
                             
-                            <form class="user needs-validation">
+                            <form class="user needs-validation"  action="register" method="get">
+                            
                                     <div class="form-group shadow">
-                                            <input type="text" class="form-control form-control-user  is-valid "  id="name" required   id="validationServer01" aria-describedby="emailHelp" placeholder="Name..">
+                                            <input type="text" class="form-control form-control-user  is-valid " 
+                                             id="name" required   id="validationServer01" aria-describedby="name" 
+                                             name="username" placeholder="Name..">
                                     </div>
 
                                     <div class="form-group shadow">
-                                            <input type="text" class="form-control form-control-use  is-valid "  required  id="validationServer01"id="surname" aria-describedby="emailHelp" placeholder="Surname..">
+                                            <input type="text" class="form-control form-control-use  is-valid "  required
+                                             id="validationServer01"id="surname" aria-describedby="surname"
+                                              name="surname"  placeholder="Surname..">
                                     </div>
                                     <div class="form-group shadow">
-                                        <input type="email" class="form-control form-control-user is-valid" id="exampleInputEmail"  required  id="validationServer01" aria-describedby="emailHelp" placeholder="Enter you Email...">
+                                        <input type="email" class="form-control form-control-user is-valid" id="exampleInputEmail"  required
+                                         id="validationServer01" aria-describedby="emailHelp" 
+                                          name="email" placeholder="Enter you Email...">
                                     </div>
                                     <div class="form-group shadow">
 
-                                        <input type="password" class="form-control form-control-user is-valid" id="exampleInputPassword" id="exampleInputEmail"  required  placeholder="Password">
+                                        <input type="password" class="form-control form-control-user is-valid" id="exampleInputPassword"
+                                         id="exampleInputEmail"  required 
+                                          name="userpass" placeholder="Password">
              
                                      </div>
                                      <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow ">Register</button>

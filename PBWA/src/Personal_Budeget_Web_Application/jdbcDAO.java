@@ -226,6 +226,29 @@ public class jdbcDAO {
 		
 		
 	}
+	
+	public boolean insertDAOregister(RegisterModel regist) throws SQLException {
+	
+		String sql = "INSERT INTO  Login (Name, Password, Surname, Email) VALUES ( ?, ?,?,?)";
+		connect();
+		
+		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+		
+		statement.setString(1, regist.getUsername());
+		statement.setString(2, regist.getUserpass());
+		statement.setString(3, regist.getSurname());
+		statement.setString(4, regist.getEmail());
+		
+		
+		boolean rowInserted = statement.executeUpdate() > 0;
+		statement.close();
+		disconnect();
+	
+		return rowInserted;
+		
+
+		
+	}
 
 	public boolean deleteDao(ProductExpense newExp) throws SQLException {
 		String sql = "DELETE FROM Expense where Id = ?";
@@ -296,6 +319,8 @@ public class jdbcDAO {
 
 		return rowUpdated;
 	}
+
+
 
 
 
