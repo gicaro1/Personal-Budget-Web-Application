@@ -27,7 +27,6 @@ public class controllerPBWA extends HttpServlet {
 		Exp1 = new jdbcDAO(jdbcURL, jdbcUsername, jdbcPassword);
 
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
@@ -123,11 +122,11 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		String username = request.getParameter("username");
 		String userpass = request.getParameter("userpass");
 		
-
+		String passwordEncrypted = Encrysecuryty.encode(userpass);
 
 		response.setContentType("text/html");
 
-		if (Exp1.validate(username, userpass)) {
+		if (Exp1.validate(username, passwordEncrypted)) {
 			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
 
 //			<-------------------SESSION -------------------------->

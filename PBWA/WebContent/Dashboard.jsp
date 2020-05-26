@@ -221,10 +221,10 @@
 
 							<div class="col-xs-2  w-50  h-40 text-center">
 								<h4>Balance</h4>
-								<h3 id="transp">
+								<h5 id="transp">
 									<i class="fa fa-dollar pr-1"></i>
 									<c:out value="${total}" />
-								</h3>
+								</h5>
 							</div>
 
 							<div class="col-xs-2 w-50">
@@ -240,10 +240,10 @@
 
 							<div class="col-xs-2  w-50 text-center">
 								<h4>Transport</h4>
-								<h3 id='trans'>
+								<h5 id='trans'>
 									<i class="fa fa-dollar pr-1"></i>
 									<c:out value="${TransporTotal}" />
-								</h3>
+								</h5>
 							</div>
 							<div class="col-xs-2 w-50">
 								<i
@@ -259,10 +259,10 @@
 
 							<div class="col-xs-2 w-50 text-center ml-1">
 								<h4 class="ml-1">Home</h4>
-								<h3>
+								<h5>
 									<i class="fa fa-dollar pr-1"></i>
 									<c:out value="${HomeTotal}" />
-								</h3>
+								</h5>
 								<i class="fas fa-pound-sign"></i>
 							</div>
 
@@ -273,27 +273,14 @@
 
 						</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 						<!-- --------------Travel ------------ -->
 						<div class=" col  bg-light m-2 shadow p-2 border_line3 d-flex">
 							<div class="col-xs-4  w-50 text-center">
 								<h4>Travel</h4>
-								<h3>
+								<h5>
 									<i class="fa fa-dollar h5_text_site_bar pr-1"></i>
 									<c:out value="${TravelTotal}" />
-								</h3>
+								</h5>
 							</div>
 							<div class="col-xs-4 w-50">
 
