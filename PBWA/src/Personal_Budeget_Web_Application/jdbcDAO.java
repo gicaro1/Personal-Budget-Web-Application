@@ -9,6 +9,12 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author giocardenas
+ *
+ */
+
+// <------- CLASS CONNECTION PROVIDE ALL THE PARAMETER  AND FUNCTIONALITY TO CONNECT TO MySql ---------->
 public class jdbcDAO {
 
 	private String jdbcURL;
@@ -21,7 +27,6 @@ public class jdbcDAO {
 		this.jdbcUsername = jdbcUsername;
 		this.jdbcPassword = jdbcPassword;
 	}
-
 	protected void connect() throws SQLException {
 		if (jdbcConnection == null || jdbcConnection.isClosed()) {
 			try {
@@ -32,7 +37,6 @@ public class jdbcDAO {
 			jdbcConnection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		}
 	}
-
 	protected void disconnect() throws SQLException {
 		if (jdbcConnection != null && !jdbcConnection.isClosed()) {
 			jdbcConnection.close();
@@ -45,26 +49,18 @@ public class jdbcDAO {
 		
 		boolean status=false;  
 
-
 		String sql = "SELECT * FROM Login WHERE Name=? and Password=?";
 		connect();
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-
-		
 
 		statement.setString(1,username );
 		statement.setString(2, passwordEncrypted);
 
 		ResultSet resultSet = statement.executeQuery();
 
-	
 		status=resultSet.next();
 		statement.close();
 		return status;
-		
-	
-		
-
 
 	}
 
@@ -132,6 +128,7 @@ public class jdbcDAO {
 
 		return list3;
 	}
+//	 <----------------  METHOD listLoansGov --------------------->
 	public List<LoanGOv> listLoansGov() throws SQLException {
 
 		List<LoanGOv> list4 = new ArrayList<>();
@@ -155,7 +152,6 @@ public class jdbcDAO {
 			
 			list4.add(ExpDep);
 		}
-
 		resultSet.close();
 		statement.close();
 
@@ -192,7 +188,6 @@ public class jdbcDAO {
 
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
 
-		
 		statement.setDouble(1, newExp.getTotal());
 		statement.setString(2, newExp.getDfecdep());
 
@@ -201,9 +196,8 @@ public class jdbcDAO {
 		disconnect();
 	
 		return rowInserted;
-	
-	
 	}
+	
 //	 <------------------------INSERT GOVERNMENT LOAN-------------------->//
 	
 	public boolean insertLoanGov(LoanGOv incomeGovernment) throws SQLException{
@@ -213,7 +207,6 @@ public class jdbcDAO {
 
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
 
-		
 		statement.setString(1, incomeGovernment.getInstitutions());
 		statement.setString(2, incomeGovernment.getPartFullTime());
 		statement.setInt(3, incomeGovernment.getGovFigures());
@@ -222,10 +215,9 @@ public class jdbcDAO {
 		statement.close();
 		disconnect();
 	
-		return rowInserted;
-		
-		
+		return rowInserted;	
 	}
+//	 <------------------------INSERT DAOregister -------------------->//
 	
 	public boolean insertDAOregister(RegisterModel regist) throws SQLException {
 	
@@ -239,15 +231,11 @@ public class jdbcDAO {
 		statement.setString(3, regist.getSurname());
 		statement.setString(4, regist.getEmail());
 		
-		
 		boolean rowInserted = statement.executeUpdate() > 0;
 		statement.close();
 		disconnect();
 	
 		return rowInserted;
-		
-
-		
 	}
 
 	public boolean deleteDao(ProductExpense newExp) throws SQLException {
@@ -262,17 +250,13 @@ public class jdbcDAO {
 		statement.close();
 		disconnect();
 		return rowDeleted;
-
 	}
 	
-
-
+//	 <------------------------METHOD getUnique -------------------->//
 	public ProductExpense getUnique(int id) throws SQLException {
 
 		ProductExpense expEdit = null;
-
 		String sql = "SELECT * FROM Expense WHERE Id = ?";
-
 		connect();
 
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
@@ -295,19 +279,16 @@ public class jdbcDAO {
 		statement.close();
 
 		return expEdit;
-
 	}
 	
-
+//	 <------------------------METHOD updateExpense -------------------->//
 	public boolean updateExpense(BalanceT Uexp) throws SQLException {
 
 		String sql = "UPDATE Balance SET Total = ?, DfecDep = ?";
 		sql += " WHERE Id = 18";
-
 		connect();
 
 		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-		
 		
 		statement.setDouble(1, Uexp.getTotal());
 		statement.setString(2, Uexp.getDfecdep());
@@ -319,13 +300,4 @@ public class jdbcDAO {
 
 		return rowUpdated;
 	}
-
-
-
-
-
-
-
-
-
 }

@@ -9,9 +9,6 @@
 <head>
 
 <meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
-
-
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -31,8 +28,6 @@
 	rel="stylesheet">
 
 <!-- StylesSheet  -->
-<!-- <link rel="stylesheet" href="http://localhost:8080/PBWA/css/styles.css" /> -->
-
 <title>Tips</title>
 </head>
 <body>
@@ -40,23 +35,11 @@
   <div class="tips bg-dark p-5 text-center  shadow  mb-3">
   		<div >
   		     <div class="  display-1 text-light p-5">Tips</div>
- 
   		</div>
-  		<div>
-  		
-  		
-  		</div>
-
-        
     </div>
-    
-    
-<!--   -------------- cards ------------ -->
+<!----------CARDS--------- -->
 
     <div class="container-fluid ">
-
-     
-
         <div class="row   text-center d-flex justify-content-center ">
         
             <div class="card text-white bg-primary   col-sm col-md-12 col-lg-12 m-2  shadow  ">
@@ -66,9 +49,7 @@
                 <p class="card-text">Federal loans have flexible terms of payment if your employment dreams don’t exactly go according to plan after college. Plus, private loans typically have better interest rates. So be smart about the loans you take out—and try to avoid these other big student loan mistakes..</p>
                 </div>
             </div>
-
-            
-            
+       
             <div class="card text-white bg-secondary col-sm  col-md-5 col-lg-3 m-2  shadow" >
                 <h3 class="card-header text-dark">Check Your Interest Rate</h3>
                 <div class="card-body">
@@ -76,9 +57,7 @@
                 <p class="card-text"> Which loan should you pay off first? A: The one with the highest interest rate. Q: Which savings account should you open? A: The one with the best interest rate. Q: Why does credit card debt give us such a headache? A: Blame it on the compound interest rate. Bottom line here: Paying attention to interest rates will help inform which debt or savings commitments you should focus on</p>
                 </div>
             </div>
-            
-        
-        
+ 
             <div class="card text-white bg-success text-center col-sm col-md-5 col-lg-3 m-2  shadow" >
                 <h3 class="card-header text-dark">Students Should Fill Out the SFE grand</h3>
         
@@ -87,8 +66,7 @@
                 <p class="card-text center">Seven if you don’t think that you’ll get aid, it doesn’t hurt to fill out the form. That’s because 1.3 million students last year missed out on a Pell Grant—which doesn’t need to be paid back!—because they didn’t fill out the form.</p>
                 </div>
             </div>
-        
-            
+
             <div class="card text-white bg-danger  text-center  col-sm col-md-5  col-lg-3 m-2   shadow" >
                 <h3 class="card-header text-dark">Set Specific Financial Goals</h3>
                 <div class="card-body">
@@ -96,14 +74,10 @@
                 <p class="card-text">pUse numbers and dates, not just words, to describe what you want to accomplish with your money. How much debt do you want to pay off—and when? How much do you want saved, and by what date?.</p>
                 </div>
             </div>
-
         </div>
-        
-        
-        
-        <div class="row d-flex d-flex justify-content-center text-center  m-1">
     
-             
+        <div class="row d-flex d-flex justify-content-center text-center  m-1">
+
             <div class="card text-white bg-warning  col-sm col-md-5 col-lg-3  m-2 shadow" >
                 <h3 class="card-header text-dark">Check Your Interest Rate</h3>
                 <div class="card-body">
@@ -111,9 +85,7 @@
                 <p class="card-text">Which loan should you pay off first? A: The one with the highest interest rate. Q: Which savings account should you open? A: The one with the best interest rate. Q: Why does credit card debt give us such a headache? A: Blame it on the compound interest rate. Bottom line here: Paying attention to interest rates will help inform which debt or savings commitments you should focus on</p>
                 </div>
             </div>
-       
-            
-        
+    
             <div class="card text-white bg-info  text-center   col-sm col-md-5 col-lg-3  m-2 shadow" >
                 <h3 class="card-header text-dark">Track Your Net Worth</h3>
                 <div class="card-body">
@@ -130,10 +102,7 @@
                 <p class="card-text">By priorities, we mean building up emergency savings, paying off debt, and padding your retirement nest egg. Seem like a big percentage?.</p>
                 </div>
             </div>
-          
-       
-        
-            
+  
             <div class="card  bg-dark text-center text-light col-sm col-md-12 col-lg-12 p-5  m-2 shadow">
                 <h2 class="card-header text-light">Budget About 30% of Your Income for Lifestyle Spending</h2>
                 <div class="card-body">
@@ -145,15 +114,12 @@
 
     </div>
 
-
-       
-
+<!--FOOTER  -->
     <div class="text-muted   bg-dark mt-2 shadow">
 
         <div class="footer-copyright text-center   py-3">© 2020 Copyright:
             <a class="text-muted" href="https://mdbootstrap.com/"> PBWA</a>
-            </div>
+       </div>
     </div>
-
 </body>
 </html>

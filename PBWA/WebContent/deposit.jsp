@@ -24,109 +24,43 @@
   <link rel="stylesheet" href="/CSS/styles.css">
     <title>Deposit</title>
 </head>
-<body>
-	<%-- <h1>Deposit</h1>
 
-	<div align="center" >
-
-
-		<form   action="insertDep"   action="showbalance" method="post">
-				<!-- <input type="hidden" name="showbalance"  /> -->
-			
-
-			<table border="1">
-			
-			
-				<tr>
-					<th>Sum:</th>
-					<td><input type="text" name="total" size="10"
-						value="<c:out value='${ProductExpense.sum}' />" /></td>
-				</tr>
-				
-				<tr>
-					<th>Date:</th>
-					<td><input type="text" name="dateD" size="45"
-						value="<c:out value='${ProductExpense.dfec}' />" /></td>
-				</tr>
-
-
-				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="Save" /></td>
-				</tr>
-			</table>
-		</form>
-		
-		
-	<table>
-			<tr>
-				<c:forEach var="tempDep" items="${BALANCE}">
-					<td><c:out value="${tempDep.total}" /> balance</td>
-
-				</c:forEach>
-
-
-			</tr>
-
-
-		</table>
-
-	</div>
-	 --%>
 	 <body> 
         <div class="row  d-flex justify-content-center row_login_container ">
             <div class="col-lg-5  A  ">
                 <div class="container   ">
-                    
-
-                
+   
                 <div class="  card p-3 mt-3 login_main_container shadow rounded  card_container">
+                
                         <div class="col-12-sm   welcome_tittle text-muted  ">
                                 <h1 class=" text-center py-3 ">Deposit</h1>
-                            
-                        
-                        
                         </div>
+                        
                     <div class="text-center card-header bg-success rounded shadow">
-                    <h1 class="h1 text-light my-4  card_welcome_tittle ">Add Cash!</h1>
+                   			 <h1 class="h1 text-light my-4  card_welcome_tittle ">Add Cash!</h1>
                     </div>
 
                     <div class="car-body pt-3">
-                    
-                    	<!--  action="showbalance" -->
                             <form class=" needs-validation user"  action="insertDep"   method="get">
-                                    <!-- <div class="form-group shadow">
-                                        <input type="text" class="form-control form-control  input_login form-control-user " name="total" aria-describedby="emailHelp" placeholder="Source:" value="<c:out value='${ProductExpense.sum}' />" />
-                                    </div> -->
-                                    
-                                    
+                       
                                     <div class="form-group shadow">
                                         <input type="text" class="form-control form-control-user is-valid" name="total" placeholder="amount" class="form-control is-valid"   required >
                                     </div>
-                                    
-                                    
-                                    
+                             
                                     <div class="form-group d-flex align-items-center rounded">
                                         <label class="p-2 m-1 text-muted rounded shadow is-valid" >Date</label>
                                          <input type="date" name="dateD" max="3000-12-31" 
                                                min="1000-01-01" class="form-control shadow"  id="validationServer01"   required  >
-                                       </div>
-                                      
-                                    <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow">Deposit</button>
-                                
-                                </form>
-
+                                       </div> 
+                                                                      
+                                    <button type="submit" class="btn btn-outline-success btn-lg  btn-block shadow">Deposit</button>                            
+                             </form>
                     </div>
              
                     <hr>
-                
                 </div>
             </div>
-           
-       
-            </div>
-           
-      
+      </div>
     </div>
 </body>
 

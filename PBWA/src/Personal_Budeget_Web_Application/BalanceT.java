@@ -1,29 +1,25 @@
 package Personal_Budeget_Web_Application;
 
+/**
+ * @author giocardenas
+ *
+ */
 public class BalanceT {
-	
 	private int id ;
 	private double  total;
 	private String dfecdep;
 	
-	
-	
+//	<-------------- CONSTRUCTOS ----------------->
 	public BalanceT(int id) {
 	
 		this.id = id;
 	}
 
-	
-	
 	public BalanceT(double total, String dfecdep) {
 	
 		this.total = total;
 		this.dfecdep = dfecdep;
 	}
-	
-	
-
-
 
 	public BalanceT(double total, String dfecdep, int id) {
 		super();
@@ -31,9 +27,8 @@ public class BalanceT {
 		this.dfecdep = dfecdep;
 		this.id = id;
 	}
-
-
-
+	
+//	<-------------- GETTERS AND SETTERS ----------------->
 	public double getTotal() {
 		return total;
 	}
@@ -52,15 +47,4 @@ public class BalanceT {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
 }

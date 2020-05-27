@@ -34,60 +34,44 @@
 <link rel="stylesheet" href="http://localhost:8080/PBWA/css/styles.css" />
 
 </head>
+
+
+
 <body class="">
 
+	<div
+		class=" col-12  col-sm-12 col-md-8  col-lg-8  col-xl-6 d-flex justify-content-center container  ">
 
 
-
-
-
-
-
-
-
-	<div class=" col-12  col-sm-12 col-md-8  col-lg-8  col-xl-6 d-flex justify-content-center container  ">
-		
-		
-		
 		<div class="row d-flex justify-content-center  ">
 			<div class="  welcome_tittle text-muted  mt-5  mb-3">
 				<h3 class="   text-center animated  fadeInDown delay-2s ">Personal
 					budget Web Application</h3>
-
-
 			</div>
 
 			<div class="container ">
-
-
 				<div class=" card h-auto ">
-				
+
 					<div class="text-center card-header bg-success rounded shadow  ">
 						<h1 class=" text-light my-4 animated flip delay-2s  ">Welcome
 							Back!</h1>
-						<%-- <c:out value="${USER_SESSION}"/> --%>
+
 					</div>
 
 					<div class="card-body">
 
-
+						<!-- FORM -->
 						<c:choose>
 							<c:when test="${username == null }">
 
 								<form class="needs-validation " action="login" method="get"
 									class="user">
 
-
-
-
 									<div class="form-group shadow ">
-
 										<input type="text" name="username" id="validationServer01"
 											class="form-control is-valid form-control-user   " required
 											aria-describedby="emailHelp" placeholder="Name:">
 									</div>
-
-
 
 									<div class="form-group shadow">
 
@@ -95,40 +79,23 @@
 											class="form-control is-valid  form-control-user" required
 											id="exampleInputPassword" placeholder="Password:">
 									</div>
+									
 									<button type="submit"
 										class="btn btn-outline-success btn-lg  btn-block shadow">Login</button>
 
 								</form>
-								<%-- 	<h3>
-									<c:out value="${MESSAGE}" />
-								</h3>
- --%>
-								<%-- 	<div class="alert alert-dange data-dismiss="
-									alert"r" role="alert">
-									<c:out value="${MESSAGE}" />
-								</div> --%>
-								<%-- 	<button type="button" class="close" data-dismiss="alert"
-									aria-label="Close">
-									<span aria-hidden="true"> <c:out value="${MESSAGE}" /></span>
-								</button> --%>
 
 								<div
 									class="alert alert-sucesstext-center alert-dismissible fade show"
 									role="alert">
 									<c:out value="${MESSAGE}" />
 
-
-
-
 								</div>
 							</c:when>
-
-
 
 							<c:otherwise>
 								<p>login please</p>
 							</c:otherwise>
-
 
 						</c:choose>
 					</div>

@@ -4,9 +4,10 @@ import java.io.UnsupportedEncodingException;
 import org.junit.jupiter.api.Test;
 import Personal_Budeget_Web_Application.Encrysecuryty;
 
-
-
-
+/**
+ * @author giocardenas
+ * 
+ */
 class Methods_test {
 	Encrysecuryty  testerSecurity= new Encrysecuryty(); 
 

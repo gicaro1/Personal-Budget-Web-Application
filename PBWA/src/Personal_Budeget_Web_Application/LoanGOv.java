@@ -1,5 +1,10 @@
 package Personal_Budeget_Web_Application;
 
+
+/**
+ * @author giocardenas
+ *
+ */
 public class LoanGOv {
 	
 	
@@ -9,7 +14,7 @@ public class LoanGOv {
 	private int  govFigures;
 	
 	
-	
+//	<-----------CONSTRUCTORS------------>
 	public LoanGOv(int id, String institutions, String partFullTime, int govFigures) {
 		super();
 		this.id = id;
@@ -26,7 +31,7 @@ public class LoanGOv {
 		this.govFigures = govFigures;
 	}
 
-
+//	<-----------GETTER AND SETTERS------------>
 	public int getId() {
 		return id;
 	}

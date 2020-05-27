@@ -1,12 +1,15 @@
 package Personal_Budeget_Web_Application;
-
+/**
+ * @author giocardenas
+ *
+ */
 public class RegisterModel {
 	private String username;
 	private String userpass;
 	private String surname;
 	private String email;
 	
-	
+//	<-----------CONSTRUCTOR------------>
 	public RegisterModel(String username, String userpass, String surname, String email) {
 		super();
 		this.username = username;
@@ -15,7 +18,7 @@ public class RegisterModel {
 		this.email = email;
 	}
 
-
+//	<-----------GETTER AND SETTERS------------>
 	public String getUsername() {
 		return username;
 	}
@@ -54,11 +57,5 @@ public class RegisterModel {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
-	
-	
-	
-	
 
 }

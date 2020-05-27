@@ -6,16 +6,17 @@ public class ProductExpense {
 	private String category;
 	private Double sum;
 	private String dfec;
+	
+	
+//	<--------CONSTRUCTORS--------> 
 
 	public ProductExpense() {
 
 	}
-
 	public ProductExpense(int id) {
 
 		this.id = id;
 	}
-
 	public ProductExpense(int id, String purpose, String category, Double sum, String dfec) {
 
 		this.id = id;
@@ -24,7 +25,6 @@ public class ProductExpense {
 		this.sum = sum;
 		this.dfec = dfec;
 	}
-
 	public ProductExpense(String purpose, String category, Double sum, String dfec) {
 
 		this.purpose = purpose;
@@ -32,6 +32,7 @@ public class ProductExpense {
 		this.sum = sum;
 		this.dfec = dfec;
 	}
+//	<--------GETTERS AND SETTERS--------> 
 
 	public int getId() {
 		return id;

@@ -1,10 +1,8 @@
 package Personal_Budeget_Web_Application;
 
 import java.io.IOException;
-
 import java.sql.SQLException;
 import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+/**
+ * @author giocardenas
+ *
+ */
 
 @WebServlet("/controllerPBWA")
 public class controllerPBWA extends HttpServlet {
@@ -25,8 +28,8 @@ public class controllerPBWA extends HttpServlet {
 		String jdbcPassword = getServletContext().getInitParameter("jdbcPassword");
 
 		Exp1 = new jdbcDAO(jdbcURL, jdbcUsername, jdbcPassword);
-
 	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
@@ -40,9 +43,8 @@ public class controllerPBWA extends HttpServlet {
 //            dispatcher.forward(request, response);
 			response.sendRedirect("index.jsp");
 		}
-
 	}
-
+//<--------- METHOD DOGET-------------->
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
@@ -59,27 +61,21 @@ public class controllerPBWA extends HttpServlet {
 			case "/Loan":
 				insertLoan(request, response);
 				break;
-
 			case "/new":
 				showNewForm(request, response);
 				break;
 			case "/insert":
 				insertExpense(request, response);
-
 				break;
 			case "/insertDep":
 				insertDeposit(request, response);
-
 				break;
-
 			case "/delete":
 				deleteExpense(request, response);
 				break;
-
 			case "/edit":
 				showEditForm(request, response);
 				break;
-
 //			case "/update":
 //				updateExpense(request, response);
 //				
@@ -87,38 +83,30 @@ public class controllerPBWA extends HttpServlet {
 			default:
 
 				listexpenses(request, response);
-//				listBalance(request, response) ;
-
-//				DisplayBalance(request, response);
-
 			}
 		} catch (SQLException ex) {
 			throw new ServletException(ex);
 		}
 	}
 
-
 //	 <-----------INSERT GOV LOAN ---------------->
 private void insertLoan(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	
 	String institutions = request.getParameter("institutions");
 	String courses = request.getParameter("courses");
 	int numbers = Integer.parseInt(request.getParameter("numbers"));
 	
-
 	LoanGOv incomeGovernment = new LoanGOv(institutions,courses,numbers);
 
 	Exp1.insertLoanGov(incomeGovernment);
 
-	response.sendRedirect("list");
-	
-		
+	response.sendRedirect("list");	
 	}
 
 //	 <-----------LOGIN ---------------->
 	private void login(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
 
-//		PrintWriter out = response.getWriter();
 		String username = request.getParameter("username");
 		String userpass = request.getParameter("userpass");
 		
@@ -139,16 +127,9 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 			List<BalanceT> list2 = Exp1.listBalance();
 			request.setAttribute("ELISTBAL", list2);
 
-//				response.sendRedirect("Dashboard.jsp");
-
 			RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
 			rd.forward(request, response);
-//				if(request.getSession(true) == null) {
-//					String username1 = (String) request.getSession().getAttribute("username");
-//					out.print("Welcome " + username1);
-//					out.print("<br/><a href=\"Logout\">Logout</a>");
-//				}
-
+			
 		} else {
 
 			request.setAttribute("MESSAGE", "Sorry username or password error");
@@ -156,15 +137,10 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 			rd.include(request, response);
 		}
 	}
-
-//	<------------------- ********************------------->
-
 //	<--------------------- lIST METHODS -------------------->
 
 	private void listexpenses(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException, SQLException {
-
-	
 
 		List<ProductExpense> list1 = Exp1.listAll();
 		request.setAttribute("ELIST", list1);
@@ -174,12 +150,6 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		
 		List<LoanGOv> list4 = Exp1.listLoansGov();
 		request.setAttribute("ELISTGOV", list4);
-		
-
-//		 RequestDispatcher rd;
-//         rd = getServletContext().getRequestDispatcher("/Dashboard.jsp");
-//         rd = getServletContext().getRequestDispatcher("/deposit.jsp");
-//         rd.forward(request, response);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
 
@@ -188,23 +158,7 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 	}
 	
 
-//
-//	private void listBalance(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException, SQLException {
-//		
-//
-//	
-//		List<BalanceT> list2 = Exp1.listBalance();
-//		
-//		request.setAttribute("ELISTBAL", list2);
-//		
-//		
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
-//		dispatcher.forward(request, response);
-//
-//	}
 
-//	
 //
 //	private void updateExpense(HttpServletRequest request, HttpServletResponse response)
 //			throws SQLException, IOException {
@@ -237,15 +191,12 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 
 		request.setAttribute("EX1", existingBook);
 		dispatcher.forward(request, response);
-
 	}
-
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
 		dispatcher.forward(request, response);
 	}
-
 	// <------------------INSERT METHOD-------------------> //
 
 	private void insertExpense(HttpServletRequest request, HttpServletResponse response)
@@ -261,11 +212,11 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		Exp1.insertExp(newExp);
 
 		response.sendRedirect("list");
-
 	}
-	
 	// <------------------INSERT REGISTER-------------------> //
+	
 	private void registerInsert(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException{
+		
 		String username = request.getParameter("username");
 		String userpass = request.getParameter("userpass");
 		String Surname = request.getParameter("surname");
@@ -273,37 +224,14 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		
 		String password = Encrysecuryty.encode(userpass);
 	
-
 		RegisterModel regist = new RegisterModel(username, password, Surname,email);
 
 		Exp1.insertDAOregister(regist);
 
 		response.sendRedirect("list");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
-
 	// <------------------INSERT METHOD Deposit Page-------------------> //
+	
 	private void insertDeposit(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
 
@@ -316,11 +244,8 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 
 		response.sendRedirect("list");
 
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("Dashboard.jsp");
-//		dispatcher.forward(request, response);
-
 	}
-
+	// <------------------DELETE METHOD -------------------> //
 	private void deleteExpense(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 
@@ -331,7 +256,5 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 		Exp1.deleteDao(newExp);
 
 		response.sendRedirect("list");
-
 	}
-
 }
