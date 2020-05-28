@@ -52,9 +52,9 @@ public class controllerPBWA extends HttpServlet {
 		try {
 			switch (action) {
 
-			case "/login":
-				login(request, response);
-				break;
+//			case "/login":
+//				login(request, response);
+//				break;
 			case "/register":
 				registerInsert(request, response);
 				break;
@@ -104,39 +104,39 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 	}
 
 //	 <-----------LOGIN ---------------->
-	private void login(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException, SQLException {
-
-		String username = request.getParameter("username");
-		String userpass = request.getParameter("userpass");
-		
-		String passwordEncrypted = Encrysecuryty.encode(userpass);
-
-		response.setContentType("text/html");
-
-		if (Exp1.validate(username, passwordEncrypted)) {
-			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-
-//			<-------------------SESSION -------------------------->
-
-			request.getSession(true).setAttribute("USER_SESSION", username);
-
-			List<ProductExpense> list1 = Exp1.listAll();
-			request.setAttribute("ELIST", list1);
-
-			List<BalanceT> list2 = Exp1.listBalance();
-			request.setAttribute("ELISTBAL", list2);
-
-			RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
-			rd.forward(request, response);
-			
-		} else {
-
-			request.setAttribute("MESSAGE", "Sorry username or password error");
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-			rd.include(request, response);
-		}
-	}
+//	private void login(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException, SQLException {
+//
+//		String username = request.getParameter("username");
+//		String userpass = request.getParameter("userpass");
+//		
+//		String passwordEncrypted = Encrysecuryty.encode(userpass);
+//
+//		response.setContentType("text/html");
+//
+//		if (Exp1.validate(username, passwordEncrypted)) {
+//			response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+//
+////			<-------------------SESSION -------------------------->
+//
+//			request.getSession(true).setAttribute("USER_SESSION", username);
+//
+//			List<ProductExpense> list1 = Exp1.listAll();
+//			request.setAttribute("ELIST", list1);
+//
+//			List<BalanceT> list2 = Exp1.listBalance();
+//			request.setAttribute("ELISTBAL", list2);
+//
+//			RequestDispatcher rd = request.getRequestDispatcher("Dashboard.jsp");
+//			rd.forward(request, response);
+//			
+//		} else {
+//
+//			request.setAttribute("MESSAGE", "Sorry username or password error");
+//			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+//			rd.include(request, response);
+//		}
+//	}
 //	<--------------------- lIST METHODS -------------------->
 
 	private void listexpenses(HttpServletRequest request, HttpServletResponse response)
@@ -228,7 +228,7 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 
 		Exp1.insertDAOregister(regist);
 
-		response.sendRedirect("list");
+		response.sendRedirect("index.jsp");
 	}
 	// <------------------INSERT METHOD Deposit Page-------------------> //
 	

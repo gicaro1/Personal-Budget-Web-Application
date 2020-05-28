@@ -101,12 +101,14 @@
 						<div class="col-xs-4  d-flex profile_img_wrapper  text-center">
 
 							<img class="profile_pic  " src="img/profile2.jpeg" alt="">
-							<p class="d-flex  profile_name ">
+							<p class="d-flex  profile_name  text-muted font-italic text-capitalize">
 								<c:out value="${USER_SESSION}" />
 							</p>
 						</div>
 					</div>
 				</div>
+				
+				
 
 				<!------------- CATEGORY VARIABLES  -------------->
 				<c:set var="TransporTotal" value="${0}" />
@@ -562,7 +564,9 @@
 			}
 		}
 	</script>
-</body>
+
+	
+			
 
 
 <!---------- CHARTS JAVASCRIPT GOOGLE CHART API   -->

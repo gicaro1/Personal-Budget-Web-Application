@@ -64,7 +64,7 @@
 						<c:choose>
 							<c:when test="${username == null }">
 
-								<form class="needs-validation " action="login" method="get"
+								<form class="needs-validation " action="login" method="POST"
 									class="user">
 
 									<div class="form-group shadow ">
@@ -85,12 +85,12 @@
 
 								</form>
 
-								<div
-									class="alert alert-sucesstext-center alert-dismissible fade show"
-									role="alert">
-									<c:out value="${MESSAGE}" />
+					
+				
+									<h4  class=" shadow text-center bg-success w-100 alert alert-sucess text-center alert-dismissible fade show mt-2 text-light">
+									<c:out value="${MESSAGE}" /></h4>
 
-								</div>
+						
 							</c:when>
 
 							<c:otherwise>
