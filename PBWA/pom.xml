@@ -6,6 +6,10 @@
 	<artifactId>PBWA</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -51,14 +55,14 @@
 
 	</build>
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-	
+
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
@@ -87,13 +91,6 @@
 			<artifactId>jfreechart</artifactId>
 			<version>1.0.19</version>
 		</dependency>
-
-
-
-
-
-
-
 
 	</dependencies>
 
