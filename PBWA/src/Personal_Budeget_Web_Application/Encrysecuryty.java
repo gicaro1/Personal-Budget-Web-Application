@@ -23,6 +23,8 @@ public static String decode (String encrypted ) throws UnsupportedEncodingExcept
 		return new String(b,"utf-8");
 		
 	}
+// <----- MAIN METHOD FOR TESTING PURPOSES---------->
+
 //	public static void main(String [] args) throws UnsupportedEncodingException {
 //		System.out.println(encode("Gio"));
 //		System.out.println(decode("YWJjMTIz"));  

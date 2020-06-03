@@ -39,8 +39,6 @@ public class controllerPBWA extends HttpServlet {
 
 			session.invalidate();
 
-//            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-//            dispatcher.forward(request, response);
 			response.sendRedirect("index.jsp");
 		}
 	}
@@ -73,10 +71,10 @@ public class controllerPBWA extends HttpServlet {
 			case "/edit":
 				showEditForm(request, response);
 				break;
-//			case "/update":
-//				updateExpense(request, response);
-//				
-//				break;
+			case "/update":
+				updateExpense(request, response);
+				
+				break;
 			default:
 
 				listexpenses(request, response);
@@ -121,27 +119,29 @@ private void insertLoan(HttpServletRequest request, HttpServletResponse response
 	}
 	
 
+//	<--------------------- UPDATE METHOD -------------------->
 
-//
-//	private void updateExpense(HttpServletRequest request, HttpServletResponse response)
-//			throws SQLException, IOException {
-//
-//		int idUpdated = Integer.parseInt(request.getParameter("id"));
-//
-//		Double to = Double.parseDouble(request.getParameter("total"));
-//		
-//		String dat = request.getParameter("dateD");
-//		
-//		
-//		
-//
-//		BalanceT BalP = new BalanceT( to, dat,idUpdated);
-//
-//		Exp1.updateExpense(BalP);
-//		
-//		response.sendRedirect("list");
-//
-//	}
+	private void updateExpense(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException {
+
+		int idUpdated = Integer.parseInt(request.getParameter("id"));
+
+		Double to = Double.parseDouble(request.getParameter("total"));
+		
+		String dat = request.getParameter("dateD");
+		
+		
+		
+
+		BalanceT BalP = new BalanceT( to, dat,idUpdated);
+
+		Exp1.updateExpense(BalP);
+		
+		response.sendRedirect("list");
+
+	}
+	
+//	 <-------------- SHOW EDIT FORM METHOD--------------->
 
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {

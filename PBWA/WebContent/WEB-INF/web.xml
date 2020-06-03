@@ -31,8 +31,6 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-
-
 	<context-param>
 		<param-name>jdbcURL</param-name>
 		<param-value>jdbc:mysql://mysqlsrv.dcs.bbk.ac.uk:3306/gcarde01db</param-value>
@@ -47,11 +45,6 @@
 		<param-name>jdbcPassword</param-name>
 		<param-value>bbkmysql</param-value>
 	</context-param>
-
-
-
-
-
 
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
@@ -80,7 +73,4 @@
 		<url-pattern>*.svg</url-pattern>
 	</servlet-mapping>
 
-
-	<!-- <error-page> <exception-type>java.lang.Exception</exception-type> <location>/Error.jsp</location> 
-		</error-page> -->
 </web-app>
